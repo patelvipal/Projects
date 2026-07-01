@@ -1,0 +1,448 @@
+.lw-section {
+
+    padding: 60px 40px;
+
+    background: linear-gradient(135deg,
+            #c9e0fe,
+            #cbe9ff);
+
+}
+
+
+
+
+.lw-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+
+
+.lw-header h2 {
+
+    font-size: 34px;
+
+    color: #111827;
+
+}
+
+
+
+.lw-header p {
+
+    color: #6b7280;
+
+}
+
+
+
+
+
+.lw-view-btn {
+
+
+    background: #00a5ec;
+
+
+    color: white;
+
+
+    border: none;
+
+
+    padding: 12px 24px;
+
+
+    border-radius: 25px;
+
+
+    cursor: pointer;
+
+
+    font-weight: 600;
+
+
+}
+
+
+
+
+
+/* Webinar slider */
+
+
+.lw-container {
+
+
+    display: flex;
+
+
+    gap: 25px;
+
+
+    overflow-x: auto;
+
+
+    scroll-behavior: smooth;
+
+
+    padding-bottom: 15px;
+
+
+}
+
+
+
+.lw-container::-webkit-scrollbar {
+
+    height: 8px;
+
+}
+
+
+
+.lw-container::-webkit-scrollbar-thumb {
+
+    border-radius: 20px;
+
+}
+
+
+
+
+
+/* 3 Cards Desktop */
+
+
+.lw-card {
+
+
+    min-width: calc((100% - 50px)/3);
+
+
+    background: white;
+
+
+    border-radius: 22px;
+
+
+    overflow: hidden;
+
+
+    border: 1px solid #e5e7eb;
+
+
+    flex-shrink: 0;
+
+
+    transition: .3s;
+
+
+}
+
+
+
+
+.lw-card:hover {
+
+
+    transform: translateY(-8px);
+
+
+    box-shadow: 0 20px 35px rgba(0, 0, 0, .12);
+
+
+}
+
+
+
+
+
+
+.lw-image-box {
+
+
+    position: relative;
+
+
+}
+
+
+
+
+
+.lw-image-box img {
+
+
+    width: 100%;
+
+
+    height: 170px;
+
+
+    object-fit: cover;
+
+
+}
+
+
+
+
+
+
+
+.lw-live-badge {
+
+
+    position: absolute;
+
+
+    top: 15px;
+
+
+    left: 15px;
+
+
+    background: #ef4444;
+
+
+    color: white;
+
+
+    padding: 6px 12px;
+
+
+    border-radius: 20px;
+
+
+    font-size: 13px;
+
+
+    font-weight: 600;
+
+
+}
+
+
+
+
+
+.lw-content {
+
+
+    padding: 20px;
+
+
+}
+
+
+
+
+
+.lw-content h3 {
+
+
+    font-size: 19px;
+
+
+    color: #111827;
+
+
+    margin-bottom: 15px;
+
+
+}
+
+
+
+
+
+.lw-content p {
+
+
+    color: #6b7280;
+
+
+    font-size: 14px;
+
+
+    margin: 8px 0;
+
+
+}
+
+
+
+
+
+
+
+.lw-join-btn {
+
+
+    margin-top: 15px;
+
+
+    width: 100%;
+
+
+    padding: 12px;
+
+
+    border: none;
+
+
+    border-radius: 10px;
+
+
+    background: #00a5ec;
+
+
+    color: white;
+
+
+    font-weight: 600;
+
+
+    cursor: pointer;
+
+
+    transition: .3s;
+
+
+}
+
+
+
+
+
+.lw-join-btn:hover {
+
+
+    background: #008bd1;
+
+
+}
+
+
+
+
+
+
+/* Tablet */
+
+
+@media(max-width:900px) {
+
+
+    .lw-section {
+
+
+        padding: 50px 25px;
+
+
+    }
+
+
+
+    .lw-card {
+
+
+        min-width: calc((100% - 25px)/2);
+
+
+    }
+
+
+
+    .lw-header h2 {
+
+
+        font-size: 28px;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+/* Mobile */
+
+
+@media(max-width:600px) {
+
+
+    .lw-section {
+
+
+        padding: 40px 15px;
+
+
+    }
+
+
+
+
+    .lw-header {
+
+
+        flex-direction: column;
+
+
+        align-items: flex-start;
+
+
+        gap: 15px;
+
+
+    }
+
+
+
+
+    .lw-header h2 {
+
+
+        font-size: 25px;
+
+
+    }
+
+
+
+
+
+    .lw-card {
+
+
+        min-width: 85vw;
+
+
+    }
+
+
+
+    .lw-image-box img {
+
+
+        height: 160px;
+
+
+    }
+
+
+}

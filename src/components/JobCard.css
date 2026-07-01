@@ -1,0 +1,416 @@
+/* =========================
+   Latest Jobs Section
+========================= */
+
+
+.jobs-section {
+
+    padding: 60px 40px;
+
+    background: #d3e8ff;
+
+}
+
+
+
+.jobs-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+
+.jobs-header h2 {
+
+    font-size: 34px;
+
+    color: #111827;
+
+}
+
+
+
+.jobs-header p {
+
+    color: #6b7280;
+
+}
+
+
+
+/* =========================
+   Job Slider
+========================= */
+
+
+.jobs-slider {
+
+    display: flex;
+
+    gap: 22px;
+
+    overflow-x: auto;
+
+    scroll-behavior: smooth;
+
+    padding-bottom: 15px;
+
+}
+
+
+
+.jobs-slider::-webkit-scrollbar {
+
+    height: 8px;
+
+}
+
+
+
+.jobs-slider::-webkit-scrollbar-thumb {
+
+    border-radius: 20px;
+
+}
+
+
+
+
+
+/* =========================
+   Job Card
+========================= */
+
+
+.job-card {
+
+
+    min-width: calc((100% - 66px)/4);
+
+
+    background: white;
+
+
+    border-radius: 22px;
+
+
+    padding: 25px;
+
+
+    border: 1px solid #e5e7eb;
+
+
+    flex-shrink: 0;
+
+
+    transition: .3s;
+
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .05);
+
+
+}
+
+
+
+
+.job-card:hover {
+
+
+    transform: translateY(-8px);
+
+
+    box-shadow: 0 20px 35px rgba(0, 0, 0, .12);
+
+
+}
+
+
+
+
+/* top part */
+
+
+.job-card-top {
+
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+
+
+.job-company-logo {
+
+
+    width: 55px;
+
+
+    height: 55px;
+
+
+    border-radius: 15px;
+
+
+    background: #eef2ff;
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    justify-content: center;
+
+
+    font-size: 28px;
+
+
+}
+
+
+
+
+
+.job-card h3 {
+
+
+    font-size: 19px;
+
+
+    color: #111827;
+
+
+    margin-bottom: 8px;
+
+
+}
+
+
+
+
+.job-company-name {
+
+
+    color: #6b7280;
+
+
+    font-size: 14px;
+
+
+}
+
+
+
+
+
+/* Details */
+
+
+.job-card-details {
+
+
+    display: flex;
+
+
+    flex-direction: column;
+
+
+    gap: 10px;
+
+
+    margin-top: 15px;
+
+
+    color: #6b7280;
+
+
+    font-size: 14px;
+
+
+}
+
+
+
+
+.job-card-details span {
+
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+
+
+/* button */
+
+
+.job-apply-btn {
+
+    margin-top: 22px;
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #00a5ec;
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.job-apply-btn:hover {
+
+    background: #008bd1;
+
+    transform: translateY(-2px);
+
+}
+/* =========================
+   Tablet
+========================= */
+
+
+@media(max-width:1000px) {
+
+
+    .jobs-section {
+
+        padding: 50px 25px;
+
+    }
+
+
+
+    .job-card {
+
+
+        min-width: calc((100% - 22px)/2);
+
+
+    }
+
+
+
+    .jobs-header h2 {
+
+        font-size: 28px;
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Mobile
+========================= */
+
+
+@media(max-width:600px) {
+
+
+    .jobs-section {
+
+
+        padding: 40px 15px;
+
+
+    }
+
+
+
+    .jobs-header {
+
+
+        flex-direction: column;
+
+
+        align-items: flex-start;
+
+
+        gap: 15px;
+
+
+    }
+
+
+
+
+    .jobs-header h2 {
+
+
+        font-size: 25px;
+
+
+    }
+
+
+
+
+    .job-card {
+
+
+        min-width: 85vw;
+
+
+        padding: 22px;
+
+
+    }
+
+
+
+    .job-company-logo {
+
+
+        width: 50px;
+
+        height: 50px;
+
+        font-size: 24px;
+
+
+    }
+
+
+
+}

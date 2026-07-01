@@ -1,0 +1,261 @@
+.ts-section {
+
+
+    padding: 70px 40px;
+
+
+    background: #f8fafc;
+
+
+}
+
+
+
+
+.ts-heading {
+
+
+    text-align: center;
+
+
+    margin-bottom: 40px;
+
+
+}
+
+
+
+.ts-heading h2 {
+
+
+    font-size: 34px;
+
+
+    color: #111827;
+
+
+}
+
+
+
+.ts-heading p {
+
+
+    color: #6b7280;
+
+
+}
+
+
+
+
+
+.ts-slider {
+
+
+    display: flex;
+
+
+    gap: 25px;
+
+
+    overflow-x: auto;
+
+
+    scroll-behavior: smooth;
+
+
+    padding-bottom: 15px;
+
+
+}
+
+
+
+
+
+.ts-card {
+
+
+    min-width: calc((100% - 50px)/3);
+
+
+    background: white;
+
+
+    padding: 30px;
+
+
+    border-radius: 22px;
+
+
+    text-align: center;
+
+
+    border: 1px solid #e5e7eb;
+
+
+    flex-shrink: 0;
+
+
+    transition: .3s;
+
+
+}
+
+
+
+
+
+.ts-card:hover {
+
+
+    transform: translateY(-8px);
+
+
+    box-shadow: 0 20px 35px rgba(0, 0, 0, .12);
+
+
+}
+
+
+
+
+
+
+.ts-card img {
+
+
+    width: 80px;
+
+
+    height: 80px;
+
+
+    border-radius: 50%;
+
+
+    object-fit: cover;
+
+
+}
+
+
+
+
+
+.ts-card h3 {
+
+
+    margin: 15px 0 5px;
+
+
+    color: #111827;
+
+
+}
+
+
+
+
+
+.ts-card span {
+
+
+    color: #00a5ec;
+
+
+    font-size: 14px;
+
+
+}
+
+
+
+
+.ts-rating {
+
+
+    margin: 15px 0;
+
+
+}
+
+
+
+
+
+.ts-card p {
+
+
+    color: #6b7280;
+
+
+    line-height: 1.6;
+
+
+}
+
+
+
+
+
+/* Tablet */
+
+
+@media(max-width:900px) {
+
+
+    .ts-card {
+
+
+        min-width: calc((100% - 25px)/2);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+/* Mobile */
+
+
+@media(max-width:600px) {
+
+
+    .ts-section {
+
+
+        padding: 50px 15px;
+
+
+    }
+
+
+
+
+    .ts-card {
+
+
+        min-width: 85vw;
+
+
+    }
+
+
+
+    .ts-heading h2 {
+
+
+        font-size: 26px;
+
+
+    }
+
+
+}

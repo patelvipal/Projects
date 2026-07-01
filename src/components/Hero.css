@@ -1,0 +1,440 @@
+.heroPro-section {
+
+
+    height: 70vh;
+
+    min-height: 520px;
+
+
+    padding: 70px 60px;
+
+
+    display: flex;
+
+    align-items: center;
+
+
+
+
+    background:
+
+
+        linear-gradient(rgba(0, 0, 0, .55),
+            rgba(0, 0, 0, .55)),
+
+
+
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
+
+
+
+
+    background-size: cover;
+
+
+    background-position: center;
+
+
+    background-repeat: no-repeat;
+
+
+
+    border-radius: 0 0 3px 5px;
+
+
+}
+
+
+
+
+.heroPro-content {
+
+
+    width: 60%;
+
+
+}
+
+
+
+
+.heroPro-title {
+
+
+    font-size: 52px;
+
+
+    line-height: 1.2;
+
+
+    color: white;
+
+
+    font-weight: 700;
+
+
+}
+
+
+
+
+
+.heroPro-description {
+
+
+    font-size: 20px;
+
+
+    color: #f3f4f6;
+
+
+    margin: 20px 0 35px;
+
+
+}
+
+
+
+
+
+.heroPro-buttons {
+
+
+    display: flex;
+
+
+    gap: 15px;
+
+
+    flex-wrap: wrap;
+
+
+}
+
+
+
+
+
+.heroPro-login,
+.heroPro-google,
+.heroPro-email {
+
+
+    padding: 14px 25px;
+
+
+    border: none;
+
+
+    border-radius: 12px;
+
+
+    cursor: pointer;
+
+
+    font-size: 15px;
+
+
+    font-weight: 600;
+
+
+    transition: .3s;
+
+
+}
+
+
+
+
+
+
+.heroPro-login {
+
+
+    background: #00a5ec;
+
+
+    color: white;
+
+
+}
+
+
+
+
+
+.heroPro-google {
+
+
+    background: white;
+
+
+    color: #111827;
+
+
+}
+
+
+
+
+
+.heroPro-email {
+
+
+    background: #111827;
+
+
+    color: white;
+
+
+}
+
+
+
+
+
+.heroPro-login:hover {
+
+
+    background: #008bd1;
+
+
+}
+
+
+
+
+.heroPro-google:hover,
+.heroPro-email:hover {
+
+
+    transform: translateY(-3px);
+
+
+}
+
+
+
+
+
+
+.heroPro-stats {
+
+
+    display: flex;
+
+
+    gap: 45px;
+
+
+    margin-top: 45px;
+
+
+}
+
+
+
+
+
+.heroPro-stat h3 {
+
+
+    font-size: 32px;
+
+
+    color: white;
+
+
+    margin: 0;
+
+
+}
+
+
+
+
+
+.heroPro-stat p {
+
+
+    color: white;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* Tablet */
+
+
+@media(max-width:900px) {
+
+
+    .heroPro-section {
+
+
+        height: auto;
+
+
+        padding: 60px 25px;
+
+
+    }
+
+
+
+
+    .heroPro-content {
+
+
+        width: 100%;
+
+
+        text-align: center;
+
+
+    }
+
+
+
+
+    .heroPro-title {
+
+
+        font-size: 38px;
+
+
+    }
+
+
+
+
+    .heroPro-buttons {
+
+
+        justify-content: center;
+
+
+    }
+
+
+
+
+
+    .heroPro-stats {
+
+
+        justify-content: center;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* Mobile */
+
+
+@media(max-width:600px) {
+
+
+
+    .heroPro-section {
+
+
+        padding: 45px 15px;
+
+
+    }
+
+
+
+
+
+    .heroPro-title {
+
+
+        font-size: 30px;
+
+
+    }
+
+
+
+
+
+    .heroPro-description {
+
+
+        font-size: 16px;
+
+
+    }
+
+
+
+
+    .heroPro-buttons {
+
+
+        flex-direction: column;
+
+
+    }
+
+
+
+
+
+    .heroPro-login,
+    .heroPro-google,
+    .heroPro-email {
+
+
+        width: 100%;
+
+
+    }
+
+
+
+
+    .heroPro-stats {
+
+
+        gap: 20px;
+
+
+        flex-wrap: wrap;
+
+
+        justify-content: center;
+
+
+    }
+
+
+
+    .heroPro-stat h3 {
+
+
+        font-size: 25px;
+
+
+    }
+
+
+
+}

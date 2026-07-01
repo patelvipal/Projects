@@ -1,0 +1,44 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f5f7fb;
+    /* Internshala-like light background */
+    color: #111827;
+    line-height: 1.5;
+}
+
+/* LINKS */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* BUTTON BASE */
+button {
+    font-family: "Roboto", sans-serif;
+}
+
+/* INPUT BASE */
+input,
+select {
+    font-family: "Roboto", sans-serif;
+}
+
+/* SCROLL */
+html {
+    scroll-behavior: smooth;
+}

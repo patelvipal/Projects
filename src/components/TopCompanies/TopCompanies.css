@@ -1,0 +1,189 @@
+/* =========================
+   Top Companies Section
+========================= */
+
+.top-companies-wrapper {
+    padding: 50px 3.8%;
+    background: #f8fafc;
+}
+
+.top-companies-heading {
+    text-align: start;
+    margin-bottom: 40px;
+}
+
+.top-companies-heading h2 {
+    font-size: 2.3rem;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.top-companies-heading p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+/* =========================
+   Horizontal Scroll
+========================= */
+
+.top-companies-list {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 15px 5px;
+}
+
+/* Hide Scrollbar */
+
+.top-companies-list::-webkit-scrollbar {
+    display: none;
+}
+
+.top-companies-list {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* =========================
+   Company Card
+========================= */
+
+.top-company-item {
+    min-width: 260px;
+    flex-shrink: 0;
+
+    background: white;
+    border-radius: 18px;
+    padding: 25px 20px;
+    text-align: center;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.top-company-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================
+   Logo
+========================= */
+
+.top-company-logo-box {
+    width: 90px;
+    height: 90px;
+
+    margin: auto;
+
+    background: #f1f5f9;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-company-logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+/* =========================
+   Text
+========================= */
+
+.top-company-title {
+    margin-top: 18px;
+    font-size: 22px;
+    color: #1e293b;
+}
+
+.top-company-count {
+    color: #2563eb;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.top-company-location {
+    margin-top: 8px;
+    color: #64748b;
+}
+
+.top-company-rating {
+    margin-top: 8px;
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+/* =========================
+   Button
+========================= */
+
+.top-company-action {
+    width: 100%;
+    margin-top: 20px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #00a5ec;
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.top-company-action:hover {
+    background: #008bd1;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media(max-width:768px) {
+
+    .top-companies-wrapper {
+        padding: 60px 20px;
+    }
+
+    .top-company-item {
+        min-width: 220px;
+    }
+
+    .top-companies-heading h2 {
+        font-size: 32px;
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .top-company-item {
+        min-width: 190px;
+    }
+
+    .top-company-logo-box {
+        width: 70px;
+        height: 70px;
+    }
+
+    .top-company-logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .top-company-title {
+        font-size: 18px;
+    }
+
+}

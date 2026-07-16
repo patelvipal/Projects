@@ -1,0 +1,183 @@
+/* ===========================================
+   How It Works Section
+=========================================== */
+
+.how-it-works {
+    padding: 80px 8%;
+    background: linear-gradient(135deg,
+                #c9e0fe,
+                #cbe9ff);
+}
+
+.how-it-works-heading {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.how-it-works-heading h2 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.how-it-works-heading p {
+    font-size: 1rem;
+    color: #64748b;
+}
+
+/* ===========================================
+   Cards Container
+=========================================== */
+
+.how-it-works-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* ===========================================
+   Card
+=========================================== */
+
+.how-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
+}
+
+.how-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+}
+
+/* ===========================================
+   Icon
+=========================================== */
+
+.how-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background: #eff6ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2563eb;
+    font-size: 32px;
+    transition: 0.3s;
+}
+
+.how-card:hover .how-icon {
+    background: #2563eb;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* ===========================================
+   Title
+=========================================== */
+
+.how-card h3 {
+    font-size: 1.4rem;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+/* ===========================================
+   Description
+=========================================== */
+
+.how-card p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ===========================================
+   Tablet
+=========================================== */
+
+@media (max-width: 992px) {
+    .how-it-works {
+        padding: 70px 5%;
+    }
+
+    .how-it-works-heading h2 {
+        font-size: 2rem;
+    }
+
+    .how-it-works-container {
+        gap: 25px;
+    }
+}
+
+/* ===========================================
+   Mobile
+=========================================== */
+
+@media (max-width: 768px) {
+    .how-it-works {
+        padding: 60px 20px;
+    }
+
+    .how-it-works-heading {
+        text-align: center;
+    }
+
+    .how-it-works-heading h2 {
+        font-size: 1.8rem;
+    }
+
+    .how-it-works-heading p {
+        font-size: 0.95rem;
+    }
+
+    .how-card {
+        padding: 30px 20px;
+    }
+
+    .how-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+    }
+
+    .how-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===========================================
+   Small Mobile
+=========================================== */
+
+@media (max-width: 480px) {
+    .how-it-works-heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .how-card {
+        padding: 25px 18px;
+    }
+
+    .how-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .how-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .how-card p {
+        font-size: 14px;
+    }
+}

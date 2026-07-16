@@ -1,140 +1,223 @@
-/* NAVBAR */
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
 .navbar {
+    width: 100%;
     background: #fff;
-    border-bottom: 1px solid #e5e7eb;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 5 10px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
 }
 
 .nav-container {
+    max-width: 1500px;
+    margin: auto;
+    padding: 16px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 40px;
+    gap: 20px;
 }
 
-/* LEFT */
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+/* ===========================
+   LOGO
+=========================== */
+
+.logo a {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: #2563eb;
 }
 
-.logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: #00a5ec;
-}
+/* ===========================
+   NAVIGATION
+=========================== */
 
-/* LINKS */
 .nav-links {
     display: flex;
-    gap: 25px;
+    align-items: center;
+    gap: 35px;
     list-style: none;
 }
 
 .nav-links li {
-    position: relative;
-    cursor: pointer;
+    list-style: none;
 }
 
-.nav-links span {
-    font-size: 14px;
-    color: #111827;
+.nav-links a {
+    text-decoration: none;
+    color: #1e293b;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-/* ===== DROPDOWN BIG CARD ===== */
-.dropdown-card {
-    position: absolute;
-    top: 40px;
-    left: 0;
-    width: 260px;
-    /* 🔥 bigger card */
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-    padding: 12px;
-    display: none;
-    flex-direction: column;
-    gap: 10px;
+.nav-links a:hover {
+    color: #2563eb;
 }
 
-/* SHOW ON HOVER */
-.dropdown:hover .dropdown-card {
+/* ===========================
+   SAVED JOBS
+=========================== */
+
+.saved-link {
     display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-/* CARD ITEM */
-.card-item {
-    padding: 10px;
-    border-radius: 8px;
-    transition: 0.2s;
+.saved-count {
+    width: 20px;
+    height: 25px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
 }
 
-.card-item h4 {
-    font-size: 14px;
-    color: #111827;
-    margin-bottom: 4px;
-}
+/* ===========================
+   SEARCH
+=========================== */
 
-.card-item p {
-    font-size: 12px;
-    color: #6b7280;
-}
-
-/* hover effect */
-.card-item:hover {
-    background: #f3f4f6;
-}
-
-/* SEARCH */
 .nav-search {
-    display: flex;
-    border: 1px solid #e5e7eb;
-    border-radius: 30px;
-    overflow: hidden;
-    width: 300px;
+    width: 280px;
 }
 
 .nav-search input {
-    flex: 1;
-    border: none;
-    padding: 8px 12px;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: 1px solid #d1d5db;
     outline: none;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-.nav-search button {
-    background: #00a5ec;
+.nav-search input:focus {
+    border-color: #2563eb;
+}
+
+/* ===========================
+   RIGHT BUTTONS
+=========================== */
+
+.nav-right {
+    display: flex;
+    gap: 12px;
+}
+
+.login-btn,
+.register-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.login-btn {
+    color: #2563eb;
+    border: 1px solid #2563eb;
+}
+
+.login-btn:hover {
+    background: #2563eb;
     color: white;
-    border: none;
-    padding: 8px 14px;
+}
+
+.register-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.register-btn:hover {
+    background: #1d4ed8;
+}
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
     cursor: pointer;
 }
 
-/* RIGHT */
-.nav-right {
-    display: flex;
-    gap: 10px;
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 1100px) {
+
+    .nav-search {
+        display: none;
+    }
+
 }
 
-.login {
-    border: 1px solid #00a5ec;
-    color: #00a5ec;
-    padding: 6px 14px;
-    border-radius: 20px;
+@media (max-width: 900px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
 }
 
-.signup {
-    background: #00a5ec;
-    color: white;
-    padding: 6px 14px;
-    border-radius: 20px;
-}
+@media (max-width: 600px) {
 
-/* HOVER EFFECT */
-.signup:hover {
-    background: #008ecc;
+    .logo a {
+        font-size: 24px;
+    }
+
+    .login-btn,
+    .register-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
 }

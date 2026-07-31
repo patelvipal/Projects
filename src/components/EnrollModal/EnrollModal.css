@@ -1,0 +1,191 @@
+/* ===========================
+   OVERLAY
+=========================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    animation: fadeIn .3s ease;
+}
+
+/* ===========================
+   MODAL
+=========================== */
+
+.enroll-modal {
+    width: 460px;
+    max-width: 92%;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    padding: 35px;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .20);
+
+    animation: popup .35s ease;
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.enroll-modal h2 {
+    text-align: center;
+    color: #0f172a;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+/* ===========================
+   COURSE BOX
+=========================== */
+
+.modal-course {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    margin-bottom: 25px;
+}
+
+.modal-course h3 {
+    color: #2563eb;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.modal-course p {
+    color: #475569;
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.modal-text {
+    text-align: center;
+    color: #64748b;
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.cancel-btn,
+.confirm-btn {
+    flex: 1;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.cancel-btn {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.cancel-btn:hover {
+    background: #cbd5e1;
+}
+
+.confirm-btn {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+}
+
+.confirm-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, .30);
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes popup {
+
+    from {
+        transform: scale(.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:600px) {
+
+    .enroll-modal {
+
+        padding: 25px;
+
+    }
+
+    .enroll-modal h2 {
+
+        font-size: 24px;
+
+    }
+
+    .modal-buttons {
+
+        flex-direction: column;
+
+    }
+
+}

@@ -1,13 +1,23 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import jobsData from "../../data/JobsData";
+
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-import jobsData from "../../data/jobsData";
+
+import {
+  FaMapMarkerAlt,
+  FaMoneyBillWave,
+  FaClock,
+  FaBuilding,
+  FaCheckCircle,
+} from "react-icons/fa";
+
 import "./JobDetails.css";
 
 function JobDetails() {
   const { id } = useParams();
 
-  const job = jobsData.find((item) => item.id === parseInt(id));
+  const job = jobsData.find((item) => item.id === Number(id));
 
   if (!job) {
     return (
@@ -15,10 +25,10 @@ function JobDetails() {
         <Navbar />
 
         <div className="job-not-found">
-          <h1>Job Not Found</h1>
+          <h2>Job Not Found</h2>
 
           <Link to="/jobs" className="back-btn">
-            Back to Jobs
+            ← Back to Jobs
           </Link>
         </div>
 
@@ -27,24 +37,51 @@ function JobDetails() {
     );
   }
 
+  const similarJobs = jobsData
+    .filter((item) => item.category === job.category && item.id !== job.id)
+    .slice(0, 3);
+
   return (
     <>
       <Navbar />
 
       <section className="job-details-page">
+        {/* Header */}
+
         <div className="job-details-card">
-          {/* Header */}
-
           <div className="job-header">
-            <h1>{job.title}</h1>
+            <img
+              src={job.companyLogo}
+              alt={job.company}
+              className="company-logo"
+            />
 
-            <h3>{job.company}</h3>
+            <div>
+              <h1>{job.title}</h1>
 
-            <div className="job-info">
-              <span>📍 {job.location}</span>
-              <span>💰 {job.salary}</span>
-              <span>💼 {job.jobType}</span>
-              <span>🕒 {job.experience}</span>
+              <h3>{job.company}</h3>
+
+              <div className="job-meta">
+                <span>
+                  <FaMapMarkerAlt />
+                  {job.location}
+                </span>
+
+                <span>
+                  <FaMoneyBillWave />
+                  {job.salary}
+                </span>
+
+                <span>
+                  <FaClock />
+                  {job.jobType}
+                </span>
+
+                <span>
+                  <FaBuilding />
+                  {job.experience}
+                </span>
+              </div>
             </div>
           </div>
 
@@ -53,21 +90,7 @@ function JobDetails() {
           <div className="job-section">
             <h2>Job Description</h2>
 
-            <p>{job.description || "No description available."}</p>
-          </div>
-
-          {/* Skills */}
-
-          <div className="job-section">
-            <h2>Required Skills</h2>
-
-            <div className="skills-container">
-              {(job.skills ?? []).map((skill, index) => (
-                <span key={index} className="skill-badge">
-                  {skill}
-                </span>
-              ))}
-            </div>
+            <p>{job.description}</p>
           </div>
 
           {/* Responsibilities */}
@@ -76,10 +99,25 @@ function JobDetails() {
             <h2>Responsibilities</h2>
 
             <ul>
-              {(job.responsibilities ?? []).map((item, index) => (
-                <li key={index}>{item}</li>
+              {job.responsibilities.map((item, index) => (
+                <li key={index}>
+                  <FaCheckCircle className="check-icon" />
+                  {item}
+                </li>
               ))}
             </ul>
+          </div>
+
+          {/* Skills */}
+
+          <div className="job-section">
+            <h2>Required Skills</h2>
+
+            <div className="skills">
+              {job.skills.map((skill, index) => (
+                <span key={index}>{skill}</span>
+              ))}
+            </div>
           </div>
 
           {/* Benefits */}
@@ -87,21 +125,39 @@ function JobDetails() {
           <div className="job-section">
             <h2>Benefits</h2>
 
-            <ul>
-              {(job.benefits ?? []).map((item, index) => (
-                <li key={index}>{item}</li>
+            <div className="benefits">
+              {job.benefits.map((benefit, index) => (
+                <div key={index} className="benefit-card">
+                  {benefit}
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
-          {/* Buttons */}
+          {/* Apply */}
 
-          <div className="job-buttons">
-            <button className="apply-btn">Apply Now</button>
+          <button className="apply-job-btn">Apply Now</button>
+        </div>
 
-            <Link to="/jobs" className="back-btn">
-              Back to Jobs
-            </Link>
+        {/* Similar Jobs */}
+
+        <div className="similar-jobs">
+          <h2>Similar Jobs</h2>
+
+          <div className="similar-grid">
+            {similarJobs.map((item) => (
+              <Link
+                key={item.id}
+                to={`/jobs/${item.id}`}
+                className="similar-card"
+              >
+                <h3>{item.title}</h3>
+
+                <p>{item.company}</p>
+
+                <span>{item.location}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -1,83 +1,186 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+
+import {
+  FaBars,
+  FaTimes,
+  FaSearch,
+  FaHeart,
+  FaBook,
+  FaUserCircle,
+  FaBriefcase,
+  FaChevronDown,
+} from "react-icons/fa";
+
 import { useSavedJobs } from "../../context/SavedJobsContext";
+import { useSavedCourses } from "../../context/SavedCoursesContext";
+
 import "./Navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
+
   const { savedJobs } = useSavedJobs();
+  const { savedCourses } = useSavedCourses();
 
   return (
-    <nav className="navbar">
+    <header className="navbar">
       <div className="nav-container">
         {/* Logo */}
-        <div className="logo">
-          <Link to="/">SkillBridge</Link>
-        </div>
 
-        {/* Mobile Menu */}
-        <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
-        </div>
-
-        {/* Navigation */}
-        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-          <li>
-            <Link to="/" onClick={() => setMenuOpen(false)}>
-              Home
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/jobs" onClick={() => setMenuOpen(false)}>
-              Jobs
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/courses" onClick={() => setMenuOpen(false)}>
-              Courses
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/companies" onClick={() => setMenuOpen(false)}>
-              Companies
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="/saved-jobs"
-              className="saved-link"
-              onClick={() => setMenuOpen(false)}
-            >
-              ❤️ Saved Jobs
-              <span className="saved-count">{savedJobs.length}</span>
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/profile" onClick={() => setMenuOpen(false)}>
-              Profile
-            </Link>
-          </li>
-        </ul>
+        <Link to="/" className="logo">
+          <FaBriefcase className="logo-icon" />
+          <span>SkillBridge</span>
+        </Link>
 
         {/* Search */}
+
         <div className="nav-search">
-          <input type="text" placeholder="Search jobs..." />
+          <FaSearch className="search-icon" />
+
+          <input type="text" placeholder="Search jobs, courses..." />
         </div>
 
-        {/* Right Side */}
-        <div className="nav-right">
-          <Link
-            to="/login"
-            className="login-btn"
-            onClick={() => setMenuOpen(false)}
-          >
-            Login
+        {/* Mobile Button */}
+
+        <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        {/* Navigation */}
+
+        <div className={menuOpen ? "nav-menu active" : "nav-menu"}>
+          <NavLink to="/" onClick={() => setMenuOpen(false)}>
+            Home
+          </NavLink>
+
+          <NavLink to="/jobs" onClick={() => setMenuOpen(false)}>
+            Jobs
+          </NavLink>
+
+          <NavLink to="/courses" onClick={() => setMenuOpen(false)}>
+            Courses
+          </NavLink>
+
+          <NavLink to="/companies" onClick={() => setMenuOpen(false)}>
+            Companies
+          </NavLink>
+
+          {/* Saved Jobs */}
+
+          <Link to="/saved-jobs" className="icon-link">
+            <FaHeart />
+
+            <span className="badge">{savedJobs.length}</span>
           </Link>
+
+          {/* Saved Courses */}
+
+          <Link to="/saved-courses" className="icon-link">
+            <FaBook />
+
+            <span className="badge">{savedCourses.length}</span>
+          </Link>
+
+          {/* Profile */}
+
+          <div className="profile-menu">
+            <button
+              className="profile-btn"
+              onClick={() => setProfileOpen(!profileOpen)}
+            >
+              <FaUserCircle className="profile-icon" />
+
+              <span>Profile</span>
+
+              <FaChevronDown className={profileOpen ? "rotate" : ""} />
+            </button>
+
+            {profileOpen && (
+              <div className="dropdown">
+                <Link
+                  to="/profile"
+                  onClick={() => {
+                    setProfileOpen(false);
+                    setMenuOpen(false);
+                  }}
+                >
+                  My Profile
+                </Link>
+
+                <Link
+                  to="/applied-jobs"
+                  onClick={() => {
+                    setProfileOpen(false);
+                    setMenuOpen(false);
+                  }}
+                >
+                  Applied Jobs
+                </Link>
+
+                <Link
+                  to="/saved-jobs"
+                  onClick={() => {
+                    setProfileOpen(false);
+                    setMenuOpen(false);
+                  }}
+                >
+                  Saved Jobs
+                </Link>
+
+                <Link
+                  to="/enrolled-courses"
+                  onClick={() => {
+                    setProfileOpen(false);
+                    setMenuOpen(false);
+                  }}
+                >
+                  Enrolled Courses
+                </Link>
+
+                <Link
+                  to="/saved-courses"
+                  onClick={() => {
+                    setProfileOpen(false);
+                    setMenuOpen(false);
+                  }}
+                >
+                  Saved Courses
+                </Link>
+
+                <Link
+                  to="/my-webinars"
+                  onClick={() => {
+                    setProfileOpen(false);
+                    setMenuOpen(false);
+                  }}
+                >
+                  My Webinars
+                </Link>
+
+                <Link
+                  to="/edit-profile"
+                  onClick={() => {
+                    setProfileOpen(false);
+                    setMenuOpen(false);
+                  }}
+                >
+                  Edit Profile
+                </Link>
+
+                <Link
+                  to="/login"
+                  onClick={() => {
+                    setProfileOpen(false);
+                    setMenuOpen(false);
+                  }}
+                >
+                  Logout
+                </Link>
+              </div>
+            )}
+          </div>
 
           <Link
             to="/register"
@@ -88,7 +191,7 @@ function Navbar() {
           </Link>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }
 

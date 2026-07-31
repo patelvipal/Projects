@@ -1,0 +1,194 @@
+/* ===========================
+   APPLIED JOBS PAGE
+=========================== */
+
+.applied-page {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.applied-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.applied-header h1 {
+    font-size: 38px;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.applied-header p {
+    font-size: 17px;
+    color: #64748b;
+}
+
+.applied-count {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 18px;
+    background: #2563eb;
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.applied-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 25px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.applied-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
+    transition: .3s;
+}
+
+.applied-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, .15);
+}
+
+.applied-card h2 {
+    color: #2563eb;
+    margin-bottom: 18px;
+}
+
+.applied-card p {
+    margin: 10px 0;
+    color: #475569;
+}
+
+.applied-card strong {
+    color: #0f172a;
+}
+
+.status {
+    margin-left: 8px;
+    color: #16a34a;
+    font-weight: 600;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.applied-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.details-btn,
+.remove-btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.details-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.details-btn:hover {
+    background: #1d4ed8;
+}
+
+.remove-btn {
+    border: none;
+    background: #ef4444;
+    color: white;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background: #dc2626;
+}
+
+/* ===========================
+   EMPTY STATE
+=========================== */
+
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 20px;
+}
+
+.empty-state h2 {
+    font-size: 32px;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+.empty-state p {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.browse-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.browse-btn:hover {
+    background: #1d4ed8;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:768px) {
+
+    .applied-header h1 {
+        font-size: 30px;
+    }
+
+    .applied-actions {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width:480px) {
+
+    .applied-page {
+        padding: 15px;
+    }
+
+    .applied-card {
+        padding: 18px;
+    }
+
+}

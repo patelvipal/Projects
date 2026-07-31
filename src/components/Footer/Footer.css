@@ -1,132 +1,218 @@
-.sf-footer {
+/* ===========================
+   FOOTER
+=========================== */
 
-    background: #111827;
-
-    color: white;
-
-    margin-top: 80px;
-
+.footer {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding-top: 70px;
 }
 
-.sf-container {
+/* ===========================
+   CONTAINER
+=========================== */
+
+.footer-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 6%;
 
     display: grid;
-
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-
-    gap: 40px;
-
-    padding: 60px 50px;
-
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 50px;
 }
 
-.sf-logo {
+/* ===========================
+   LOGO
+=========================== */
 
-    font-size: 32px;
-
-    color: #00a5ec;
-
-    margin-bottom: 15px;
-
-}
-
-.sf-description {
-
-    color: #d1d5db;
-
-    line-height: 1.8;
-
-    max-width: 350px;
-
-}
-
-.sf-links h3,
-.sf-contact h3 {
-
+.footer-logo {
+    font-size: 34px;
+    color: #3b82f6;
     margin-bottom: 20px;
+}
 
+.footer-column p {
+    color: #94a3b8;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* ===========================
+   LINKS
+=========================== */
+
+.footer-column h3 {
+    color: white;
+    margin-bottom: 20px;
     font-size: 20px;
-
 }
 
-.sf-links ul {
-
-    list-style: none;
-
-    padding: 0;
-
-}
-
-.sf-links ul li {
-
+.footer-column a {
+    display: block;
+    color: #94a3b8;
     margin-bottom: 12px;
-
+    transition: .3s;
 }
 
-.sf-links a {
+.footer-column a:hover {
+    color: #3b82f6;
+    padding-left: 6px;
+}
 
-    text-decoration: none;
+/* ===========================
+   SOCIAL ICONS
+=========================== */
 
-    color: #d1d5db;
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #1e293b;
+    color: white;
+
+    border-radius: 50%;
+
+    transition: .3s;
+}
+
+.footer-socials a:hover {
+    background: #2563eb;
+    transform: translateY(-5px);
+}
+
+/* ===========================
+   NEWSLETTER
+=========================== */
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.newsletter input {
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+}
+
+.newsletter button {
+    background: #2563eb;
+    color: white;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.newsletter button:hover {
+    background: #1d4ed8;
+}
+
+/* ===========================
+   BOTTOM
+=========================== */
+
+.footer-bottom {
+    margin-top: 60px;
+    border-top: 1px solid #334155;
+
+    padding: 25px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-bottom p {
+    color: #94a3b8;
+}
+
+/* ===========================
+   SCROLL BUTTON
+=========================== */
+
+.scroll-top {
+    width: 46px;
+    height: 46px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
 
     transition: .3s;
 
+    font-size: 18px;
 }
 
-.sf-links a:hover {
-
-    color: #00a5ec;
-
+.scroll-top:hover {
+    background: #1d4ed8;
+    transform: translateY(-5px);
 }
 
-.sf-contact p {
+/* ===========================
+   RESPONSIVE
+=========================== */
 
-    margin-bottom: 12px;
+@media (max-width: 992px) {
 
-    color: #d1d5db;
-
-}
-
-.sf-bottom {
-
-    border-top: 1px solid rgba(255, 255, 255, .1);
-
-    text-align: center;
-
-    padding: 20px;
-
-    color: #9ca3af;
-
-}
-
-/* Tablet */
-
-@media(max-width:900px) {
-
-    .sf-container {
-
-        grid-template-columns: 1fr 1fr;
-
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
 
-/* Mobile */
+@media (max-width: 768px) {
 
-@media(max-width:600px) {
+    .footer {
+        text-align: center;
+    }
 
-    .sf-container {
-
+    .footer-container {
         grid-template-columns: 1fr;
-
-        padding: 40px 20px;
-
     }
 
-    .sf-logo {
+    .footer-socials {
+        justify-content: center;
+    }
 
-        font-size: 28px;
-
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
     }
 
 }

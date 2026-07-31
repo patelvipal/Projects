@@ -1,0 +1,186 @@
+/* ===========================
+   MODAL OVERLAY
+=========================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(6px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    animation: fadeIn 0.25s ease;
+}
+
+/* ===========================
+   MODAL
+=========================== */
+
+.apply-modal {
+    width: 90%;
+    max-width: 500px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+
+    animation: popup 0.3s ease;
+}
+
+.apply-modal h2 {
+    color: #0f172a;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+/* ===========================
+   JOB INFO
+=========================== */
+
+.modal-job {
+    background: #f8fafc;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    margin-bottom: 25px;
+}
+
+.modal-job h3 {
+    color: #2563eb;
+    margin-bottom: 8px;
+}
+
+.modal-job p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.modal-text {
+    color: #475569;
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cancel-btn,
+.confirm-btn {
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+/* Cancel */
+
+.cancel-btn {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.cancel-btn:hover {
+    background: #cbd5e1;
+}
+
+/* Apply */
+
+.confirm-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes popup {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 576px) {
+
+    .apply-modal {
+        padding: 25px 20px;
+    }
+
+    .apply-modal h2 {
+        font-size: 24px;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    .cancel-btn,
+    .confirm-btn {
+        width: 100%;
+    }
+
+}

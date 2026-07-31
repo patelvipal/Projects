@@ -1,75 +1,43 @@
-import React from "react";
+import { useState } from "react";
+import webinarData from "../../data/webinarData";
+import WebinarCard from "../WebinarCard/WebinarCard";
 import "./LiveWebinars.css";
 
-const webinars = [
-  {
-    image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
-    title: "React Interview Preparation",
-    speaker: "Expert Developer",
-    time: "Today • 7:00 PM",
-    students: "1200+ Students",
-  },
-
-  {
-    image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
-    title: "Build Your Resume Workshop",
-    speaker: "Career Mentor",
-    time: "Tomorrow • 5:00 PM",
-    students: "800+ Students",
-  },
-
-  {
-    image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
-    title: "MERN Stack Roadmap",
-    speaker: "Full Stack Developer",
-    time: "Friday • 8:00 PM",
-    students: "950+ Students",
-  },
-
-  {
-    image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg",
-    title: "Crack Your First Job",
-    speaker: "Placement Expert",
-    time: "Sunday • 6:00 PM",
-    students: "1500+ Students",
-  },
-];
-
 function LiveWebinars() {
-  return (
-    <section className="lw-section">
-      <div className="lw-header">
-        <div>
-          <h2>Live Webinars</h2>
+  const [showAll, setShowAll] = useState(false);
 
-          <p>Learn from industry experts</p>
+  const displayedWebinars = showAll ? webinarData : webinarData.slice(0, 3);
+
+  return (
+    <section className="live-webinars">
+      <div className="live-webinars-container">
+        {/* Header */}
+
+        <div className="live-webinars-header">
+          <div>
+            <h2>🎥 Live Webinars</h2>
+
+            <p>
+              Learn directly from industry experts and boost your career with
+              live interactive sessions.
+            </p>
+          </div>
+
+          <button
+            className="view-all-webinars-btn"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {showAll ? "Show Less ↑" : "View All Webinars →"}
+          </button>
         </div>
 
-        <button className="lw-view-btn">View All →</button>
-      </div>
+        {/* Webinar Cards */}
 
-      <div className="lw-container">
-        {webinars.map((item, index) => (
-          <div className="lw-card" key={index}>
-            <div className="lw-image-box">
-              <img src={item.image} alt={item.title} />
-
-              <span className="lw-live-badge">🔴 LIVE</span>
-            </div>
-
-            <div className="lw-content">
-              <h3>{item.title}</h3>
-
-              <p>👨‍💻 {item.speaker}</p>
-
-              <p>⏰ {item.time}</p>
-
-              <p>👥 {item.students}</p>
-
-              <button className="lw-join-btn">Join Now</button>
-            </div>
-          </div>
-        ))}
+        <div className="webinars-grid">
+          {displayedWebinars.map((webinar) => (
+            <WebinarCard key={webinar.id} webinar={webinar} />
+          ))}
+        </div>
       </div>
     </section>
   );

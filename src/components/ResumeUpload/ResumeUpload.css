@@ -1,0 +1,196 @@
+/* ====================================
+   RESUME UPLOAD CARD
+==================================== */
+
+.resume-upload-card {
+    width: 100%;
+}
+
+.resume-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 28px;
+    color: #111827;
+
+    margin-bottom: 25px;
+}
+
+.resume-title svg {
+    color: #ef4444;
+}
+
+/* ====================================
+   CONTENT
+==================================== */
+
+.resume-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.resume-name {
+    padding: 18px;
+
+    border: 2px dashed #cbd5e1;
+
+    border-radius: 14px;
+
+    background: #f8fafc;
+
+    color: #334155;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    word-break: break-word;
+}
+
+/* ====================================
+   BUTTONS
+==================================== */
+
+.resume-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.resume-buttons button {
+    flex: 1;
+
+    min-width: 170px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    transition: .3s;
+}
+
+/* Upload */
+
+.upload-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.upload-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-3px);
+}
+
+/* View */
+
+.view-btn {
+    background: #16a34a;
+    color: white;
+}
+
+.view-btn:hover:not(:disabled) {
+    background: #15803d;
+    transform: translateY(-3px);
+}
+
+/* Delete */
+
+.delete-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.delete-btn:hover:not(:disabled) {
+    background: #dc2626;
+    transform: translateY(-3px);
+}
+
+/* Disabled */
+
+.resume-buttons button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ====================================
+   SUCCESS POPUP
+==================================== */
+
+.resume-success {
+    margin-top: 25px;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-weight: 700;
+
+    animation: successFade .35s ease;
+}
+
+.resume-success svg {
+    font-size: 22px;
+}
+
+/* ====================================
+   ANIMATION
+==================================== */
+
+@keyframes successFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* ====================================
+   MOBILE
+==================================== */
+
+@media(max-width:768px) {
+
+    .resume-buttons {
+        flex-direction: column;
+    }
+
+    .resume-buttons button {
+        width: 100%;
+    }
+
+    .resume-title {
+        font-size: 24px;
+    }
+
+}

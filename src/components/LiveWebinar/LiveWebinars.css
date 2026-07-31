@@ -1,446 +1,101 @@
-.lw-section {
+/* ===========================
+   LIVE WEBINARS SECTION
+=========================== */
 
-    padding: 60px 40px;
-
-    background: #ffff;
-
+.live-webinars {
+    padding: 90px 7%;
+    background: #f8fafc;
 }
 
+.live-webinars-container {
+    max-width: 1500px;
+    margin: auto;
+}
 
+/* ===========================
+   HEADER
+=========================== */
 
-
-.lw-header {
-
+.live-webinars-header {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
-    margin-bottom: 35px;
-
+    margin-bottom: 45px;
+    gap: 20px;
 }
 
-
-
-
-.lw-header h2 {
-
-    font-size: 34px;
-
-    color: #111827;
-
+.live-webinars-header h2 {
+    font-size: 38px;
+    color: #0f172a;
+    margin-bottom: 10px;
 }
 
-
-
-.lw-header p {
-
-    color: #6b7280;
-
+.live-webinars-header p {
+    color: #64748b;
+    font-size: 16px;
+    max-width: 650px;
 }
 
+/* ===========================
+   BUTTON
+=========================== */
 
-
-
-
-.lw-view-btn {
-
-
-    background: #00a5ec;
-
-
-    color: white;
-
-
+.view-all-webinars-btn {
     border: none;
-
-
-    padding: 12px 24px;
-
-
-    border-radius: 25px;
-
-
     cursor: pointer;
 
-
-    font-weight: 600;
-
-
-}
-
-
-
-
-
-/* Webinar slider */
-
-
-.lw-container {
-
-
-    display: flex;
-
-
-    gap: 25px;
-
-
-    overflow-x: auto;
-
-
-    scroll-behavior: smooth;
-
-
-    padding-bottom: 15px;
-
-
-}
-
-
-
-.lw-container::-webkit-scrollbar {
-
-    height: 8px;
-
-}
-
-
-
-.lw-container::-webkit-scrollbar-thumb {
-
-    border-radius: 20px;
-
-}
-
-
-
-
-
-/* 3 Cards Desktop */
-
-
-.lw-card {
-
-
-    min-width: calc((100% - 50px)/3);
-
-
-    background: white;
-
-
-    border-radius: 22px;
-
-
-    overflow: hidden;
-
-
-    border: 1px solid #e5e7eb;
-
-
-    flex-shrink: 0;
-
-
-    transition: .3s;
-
-
-}
-
-
-
-
-.lw-card:hover {
-
-
-    transform: translateY(-8px);
-
-
-    box-shadow: 0 20px 35px rgba(0, 0, 0, .12);
-
-
-}
-
-
-
-
-
-
-.lw-image-box {
-
-
-    position: relative;
-
-
-}
-
-
-
-
-
-.lw-image-box img {
-
-
-    width: 100%;
-
-
-    height: 170px;
-
-
-    object-fit: cover;
-
-
-}
-
-
-
-
-
-
-
-.lw-live-badge {
-
-
-    position: absolute;
-
-
-    top: 15px;
-
-
-    left: 15px;
-
-
-    background: #ef4444;
-
-
+    background: #2563eb;
     color: white;
 
-
-    padding: 6px 12px;
-
-
-    border-radius: 20px;
-
-
-    font-size: 13px;
-
-
-    font-weight: 600;
-
-
-}
-
-
-
-
-
-.lw-content {
-
-
-    padding: 20px;
-
-
-}
-
-
-
-
-
-.lw-content h3 {
-
-
-    font-size: 19px;
-
-
-    color: #111827;
-
-
-    margin-bottom: 15px;
-
-
-}
-
-
-
-
-
-.lw-content p {
-
-
-    color: #6b7280;
-
-
-    font-size: 14px;
-
-
-    margin: 8px 0;
-
-
-}
-
-
-
-
-
-
-
-.lw-join-btn {
-
-
-    margin-top: 15px;
-
-
-    width: 100%;
-
-
-    padding: 12px;
-
-
-    border: none;
-
+    padding: 14px 24px;
 
     border-radius: 10px;
 
-
-    background: #00a5ec;
-
-
-    color: white;
-
-
+    font-size: 15px;
     font-weight: 600;
 
-
-    cursor: pointer;
-
-
     transition: .3s;
-
-
 }
 
-
-
-
-
-.lw-join-btn:hover {
-
-
-    background: #008bd1;
-
-
+.view-all-webinars-btn:hover {
+    background: #1d4ed8;
 }
 
+/* ===========================
+   GRID
+=========================== */
 
-
-
-
-
-/* Tablet */
-
-
-@media(max-width:900px) {
-
-
-    .lw-section {
-
-
-        padding: 50px 25px;
-
-
-    }
-
-
-
-    .lw-card {
-
-
-        min-width: calc((100% - 25px)/2);
-
-
-    }
-
-
-
-    .lw-header h2 {
-
-
-        font-size: 28px;
-
-
-    }
-
-
-
+.webinars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
+/* ===========================
+   RESPONSIVE
+=========================== */
 
+@media (max-width:768px) {
 
-
-
-
-/* Mobile */
-
-
-@media(max-width:600px) {
-
-
-    .lw-section {
-
-
-        padding: 40px 15px;
-
-
+    .live-webinars {
+        padding: 70px 5%;
     }
 
-
-
-
-    .lw-header {
-
-
+    .live-webinars-header {
         flex-direction: column;
-
-
         align-items: flex-start;
-
-
-        gap: 15px;
-
-
     }
 
-
-
-
-    .lw-header h2 {
-
-
-        font-size: 25px;
-
-
+    .live-webinars-header h2 {
+        font-size: 30px;
     }
 
-
-
-
-
-    .lw-card {
-
-
-        min-width: 85vw;
-
-
+    .view-all-webinars-btn {
+        width: 100%;
     }
 
-
-
-    .lw-image-box img {
-
-
-        height: 160px;
-
-
+    .webinars-grid {
+        grid-template-columns: 1fr;
     }
-
 
 }

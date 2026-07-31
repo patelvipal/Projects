@@ -1,0 +1,155 @@
+/* ===========================
+   COMPANIES PAGE
+=========================== */
+
+.companies-page {
+    max-width: 1300px;
+    margin: auto;
+    padding: 50px 6%;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.companies-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.companies-header h1 {
+    font-size: 42px;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.companies-header p {
+    font-size: 18px;
+    color: #64748b;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+
+.companies-search {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.companies-search input {
+    width: 100%;
+    padding: 16px 22px;
+
+    border: 1px solid #dbe4f0;
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 16px;
+
+    transition: all 0.3s ease;
+}
+
+.companies-search input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* ===========================
+   COUNT
+=========================== */
+
+.companies-count {
+    margin-bottom: 30px;
+
+    color: #475569;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.companies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+/* ===========================
+   EMPTY STATE
+=========================== */
+
+.no-company {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background: #f8fafc;
+    border-radius: 16px;
+    border: 2px dashed #cbd5e1;
+}
+
+.no-company h2 {
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.no-company p {
+    color: #64748b;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 992px) {
+
+    .companies-page {
+        padding: 40px 5%;
+    }
+
+    .companies-header h1 {
+        font-size: 34px;
+    }
+
+    .companies-header p {
+        font-size: 16px;
+    }
+
+    .companies-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+
+    .companies-header h1 {
+        font-size: 30px;
+    }
+
+    .companies-header p {
+        font-size: 15px;
+    }
+
+    .companies-search input {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+
+    .companies-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .companies-count {
+        text-align: center;
+    }
+}

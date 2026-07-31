@@ -1,0 +1,185 @@
+/* ===========================
+   SUCCESS OVERLAY
+=========================== */
+
+.success-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10000;
+
+    animation: fadeIn 0.3s ease;
+}
+
+/* ===========================
+   SUCCESS MODAL
+=========================== */
+
+.success-modal {
+    width: 90%;
+    max-width: 420px;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+
+    animation: popup 0.35s ease;
+}
+
+/* ===========================
+   SUCCESS ICON
+=========================== */
+
+.success-icon {
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 50%;
+
+    background: #dcfce7;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #16a34a;
+    font-size: 48px;
+
+    animation: bounce 0.6s ease;
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.success-modal h2 {
+    font-size: 30px;
+    color: #0f172a;
+
+    margin-bottom: 15px;
+}
+
+/* ===========================
+   MESSAGE
+=========================== */
+
+.success-modal p {
+    color: #64748b;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+
+    font-size: 16px;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.success-btn {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.success-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(0);
+    }
+
+    60% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 576px) {
+    .success-modal {
+        padding: 30px 22px;
+    }
+
+    .success-icon {
+        width: 75px;
+        height: 75px;
+
+        font-size: 40px;
+    }
+
+    .success-modal h2 {
+        font-size: 24px;
+    }
+
+    .success-modal p {
+        font-size: 15px;
+    }
+}

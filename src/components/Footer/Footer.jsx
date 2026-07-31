@@ -1,72 +1,111 @@
-import React from "react";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaGithub,
+  FaInstagram,
+  FaArrowUp,
+} from "react-icons/fa";
+
+import { Link } from "react-router-dom";
+
 import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="sf-footer">
-      <div className="sf-container">
-        {/* Brand */}
-        <div className="sf-brand">
-          <h2 className="sf-logo">SkillBridge</h2>
+    <footer className="footer">
+      <div className="footer-container">
+        {/* About */}
 
-          <p className="sf-description">
-            Learn skills, discover jobs, and build your career with India's
-            growing learning and hiring platform.
+        <div className="footer-column">
+          <h2 className="footer-logo">SkillBridge</h2>
+
+          <p>
+            Your one-stop platform for finding jobs, learning new skills, and
+            building a successful career.
           </p>
+
+          <div className="footer-socials">
+            <a href="#">
+              <FaFacebookF />
+            </a>
+
+            <a href="#">
+              <FaLinkedinIn />
+            </a>
+
+            <a href="#">
+              <FaGithub />
+            </a>
+
+            <a href="https://www.instagram.com/skillbridge_hub/">
+              <FaInstagram />
+            </a>
+          </div>
         </div>
 
         {/* Quick Links */}
-        <div className="sf-links">
+
+        <div className="footer-column">
           <h3>Quick Links</h3>
 
-          <ul>
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Jobs</a>
-            </li>
-            <li>
-              <a href="#">Courses</a>
-            </li>
-            <li>
-              <a href="#">Companies</a>
-            </li>
-          </ul>
+          <Link to="/">Home</Link>
+
+          <Link to="/jobs">Jobs</Link>
+
+          <Link to="/courses">Courses</Link>
+
+          <Link to="/companies">Companies</Link>
+
+          <Link to="/profile">Profile</Link>
         </div>
 
         {/* Resources */}
-        <div className="sf-links">
+
+        <div className="footer-column">
           <h3>Resources</h3>
 
-          <ul>
-            <li>
-              <a href="#">Career Guide</a>
-            </li>
-            <li>
-              <a href="#">Blog</a>
-            </li>
-            <li>
-              <a href="#">Webinars</a>
-            </li>
-            <li>
-              <a href="#">Help Center</a>
-            </li>
-          </ul>
+          <a href="#">Career Tips</a>
+
+          <a href="#">Interview Prep</a>
+
+          <a href="#">Resume Builder</a>
+
+          <a href="#">Help Center</a>
+
+          <a href="#">Contact Us</a>
         </div>
 
-        {/* Contact */}
-        <div className="sf-contact">
-          <h3>Contact</h3>
+        {/* Newsletter */}
 
-          <p>📧 support@skillbridge.com</p>
-          <p>📞 +91 12345 67890</p>
-          <p>📍 Surat, Gujarat</p>
+        <div className="footer-column">
+          <h3>Newsletter</h3>
+
+          <p>Subscribe to receive the latest jobs and courses.</p>
+
+          <div className="newsletter">
+            <input type="email" placeholder="Enter your email" />
+
+            <button>Subscribe</button>
+          </div>
         </div>
       </div>
 
-      <div className="sf-bottom">
+      {/* Bottom */}
+
+      <div className="footer-bottom">
         <p>© 2026 SkillBridge. All Rights Reserved.</p>
+
+        <button
+          className="scroll-top"
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })
+          }
+        >
+          <FaArrowUp />
+        </button>
       </div>
     </footer>
   );

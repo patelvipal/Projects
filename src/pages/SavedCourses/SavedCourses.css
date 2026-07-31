@@ -1,0 +1,157 @@
+/* ==========================
+   SAVED COURSES PAGE
+========================== */
+
+.saved-courses-page {
+    padding: 60px 8%;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+.saved-courses-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.saved-courses-header h1 {
+    font-size: 38px;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.saved-courses-header p {
+    color: #64748b;
+    font-size: 18px;
+}
+
+/* ==========================
+   EMPTY STATE
+========================== */
+
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.empty-state h2 {
+    font-size: 32px;
+    color: #1e293b;
+}
+
+.empty-state p {
+    margin: 15px 0 30px;
+    color: #64748b;
+}
+
+.browse-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #2563eb;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.browse-btn:hover {
+    background: #1d4ed8;
+}
+
+/* ==========================
+   GRID
+========================== */
+
+.saved-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.saved-course-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .08);
+    transition: .3s;
+}
+
+.saved-course-card:hover {
+    transform: translateY(-6px);
+}
+
+.saved-course-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.saved-course-card h2 {
+    padding: 20px 20px 10px;
+    color: #1e293b;
+}
+
+.saved-course-card p {
+    padding: 0 20px;
+    margin-bottom: 10px;
+    color: #475569;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.saved-course-actions {
+    display: flex;
+    gap: 12px;
+    padding: 20px;
+}
+
+.details-btn,
+.remove-btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.details-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.details-btn:hover {
+    background: #1d4ed8;
+}
+
+.remove-btn {
+    border: none;
+    background: #ef4444;
+    color: white;
+}
+
+.remove-btn:hover {
+    background: #dc2626;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width:768px) {
+
+    .saved-courses-page {
+        padding: 40px 20px;
+    }
+
+    .saved-course-actions {
+        flex-direction: column;
+    }
+
+}

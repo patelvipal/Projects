@@ -2,6 +2,47 @@
    Latest Jobs Section
 ========================= */
 
+/* Applied Button */
+
+.apply-btn.applied {
+    background: #16a34a;
+    cursor: not-allowed;
+}
+
+.apply-btn.applied:hover {
+    background: #16a34a;
+    transform: none;
+}
+.save-btn {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f1f5f9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    color: #64748b;
+    font-size: 18px;
+}
+
+.save-btn:hover {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.save-btn.saved {
+    background: #ffff;
+    color: rgb(231, 8, 8);
+}
 
 .jobs-section {
 

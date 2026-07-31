@@ -1,108 +1,133 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import {
+  FaMapMarkerAlt,
+  FaMoneyBillWave,
+  FaClock,
+  FaHeart,
+} from "react-icons/fa";
+
+import { useSavedJobs } from "../../context/SavedJobsContext";
+import { useAppliedJobs } from "../../context/AppliedJobsContext";
+
+import ApplyModal from "../ApplyModal/ApplyModal";
+import SuccessModal from "../SuccessModal/SuccessModal";
+
 import "./JobCard.css";
 
-const jobs = [
-  {
-    logo: "💻",
-    title: "Frontend Developer",
-    company: "Google",
-    location: "Bangalore",
-    salary: "5-8 LPA",
-    type: "Full Time",
-  },
+function JobCard({ job }) {
+  const { toggleSaveJob, isSaved } = useSavedJobs();
+  const { applyJob, isApplied } = useAppliedJobs();
 
-  {
-    logo: "⚛️",
-    title: "React Developer",
-    company: "Infosys",
-    location: "Pune",
-    salary: "4-7 LPA",
-    type: "Full Time",
-  },
+  const [showApplyModal, setShowApplyModal] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-  {
-    logo: "🟢",
-    title: "MERN Stack Developer",
-    company: "TCS",
-    location: "Mumbai",
-    salary: "5-9 LPA",
-    type: "Hybrid",
-  },
+  const handleOpenModal = () => {
+    if (!isApplied(job.id)) {
+      setShowApplyModal(true);
+    }
+  };
 
-  {
-    logo: "☁️",
-    title: "Cloud Engineer",
-    company: "Amazon",
-    location: "Hyderabad",
-    salary: "6-12 LPA",
-    type: "Full Time",
-  },
+  const handleCloseModal = () => {
+    setShowApplyModal(false);
+  };
 
-  {
-    logo: "🐍",
-    title: "Python Developer",
-    company: "Microsoft",
-    location: "Noida",
-    salary: "6-10 LPA",
-    type: "Remote",
-  },
+  const handleConfirmApply = () => {
+    applyJob(job);
 
-  {
-    logo: "🎨",
-    title: "UI UX Designer",
-    company: "Wipro",
-    location: "Delhi",
-    salary: "3-6 LPA",
-    type: "Full Time",
-  },
+    setShowApplyModal(false);
 
-  {
-    logo: "🔐",
-    title: "Cyber Security Analyst",
-    company: "Accenture",
-    location: "Mumbai",
-    salary: "5-8 LPA",
-    type: "Hybrid",
-  },
-];
+    setTimeout(() => {
+      setShowSuccessModal(true);
+    }, 200);
+  };
 
-function JobCard() {
+  const handleCloseSuccess = () => {
+    setShowSuccessModal(false);
+  };
+
   return (
-    <section className="jobs-section">
-      <div className="jobs-header">
-        <div>
-          <h2>Latest Jobs</h2>
+    <>
+      <div className="job-card">
+        {/* Header */}
 
-          <p>Find your dream job from top companies</p>
+        <div className="job-top">
+          <div>
+            <h3>{job.title}</h3>
+
+            <span className="company-name">{job.company}</span>
+          </div>
+
+          <button
+            className={`save-btn ${isSaved(job.id) ? "saved" : ""}`}
+            onClick={() => toggleSaveJob(job)}
+            title={isSaved(job.id) ? "Saved Job" : "Save Job"}
+          >
+            {isSaved(job.id) ? "❤️" : "🤍"}
+          </button>
+        </div>
+
+        {/* Details */}
+
+        <div className="job-details">
+          <p>
+            <FaMapMarkerAlt />
+            {job.location}
+          </p>
+
+          <p>
+            <FaMoneyBillWave />
+            {job.salary}
+          </p>
+
+          <p>
+            <FaClock />
+            {job.experience}
+          </p>
+        </div>
+
+        {/* Tags */}
+
+        <div className="job-tags">
+          <span>{job.jobType}</span>
+          <span>{job.category}</span>
+        </div>
+
+        {/* Footer */}
+
+        <div className="job-footer">
+          <Link to={`/jobs/${job.id}`} className="details-btn">
+            View Details
+          </Link>
+
+          <button
+            className={`apply-btn ${isApplied(job.id) ? "applied" : ""}`}
+            onClick={handleOpenModal}
+            disabled={isApplied(job.id)}
+          >
+            {isApplied(job.id) ? "Applied ✓" : "Apply Now"}
+          </button>
         </div>
       </div>
 
-      <div className="jobs-slider">
-        {jobs.map((job, index) => (
-          <div className="job-card" key={index}>
-            <div className="job-card-top">
-              <div className="job-company-logo">{job.logo}</div>
+      {/* Apply Modal */}
 
-              <div>
-                <h3>{job.title}</h3>
+      <ApplyModal
+        isOpen={showApplyModal}
+        job={job}
+        onClose={handleCloseModal}
+        onConfirm={handleConfirmApply}
+      />
 
-                <p className="job-company-name">{job.company}</p>
-              </div>
-            </div>
+      {/* Success Modal */}
 
-            <div className="job-card-details">
-              <span>📍 {job.location}</span>
-
-              <span>💰 {job.salary}</span>
-
-              <span>💼 {job.type}</span>
-            </div>
-
-            <button className="job-apply-btn">Apply Now</button>
-          </div>
-        ))}
-      </div>
-    </section>
+      <SuccessModal
+        isOpen={showSuccessModal}
+        title="Application Submitted!"
+        message="Your application has been submitted successfully. Best of luck!"
+        onClose={handleCloseSuccess}
+      />
+    </>
   );
 }
 

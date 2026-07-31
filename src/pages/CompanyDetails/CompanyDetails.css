@@ -1,0 +1,308 @@
+/* ===========================
+   COMPANY DETAILS PAGE
+=========================== */
+
+.company-details-page {
+    max-width: 1300px;
+    margin: auto;
+    padding: 50px 6%;
+}
+
+/* ===========================
+   MAIN CARD
+=========================== */
+
+.company-details-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.company-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.company-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+
+    background: #fff;
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+    padding: 12px;
+}
+
+.company-avatar {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 18px;
+
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+
+    color: white;
+
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.company-header h1 {
+    font-size: 36px;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+/* ===========================
+   RATING
+=========================== */
+
+.company-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #475569;
+    font-weight: 600;
+
+    margin-bottom: 18px;
+}
+
+.star {
+    color: #facc15;
+}
+
+/* ===========================
+   META INFO
+=========================== */
+
+.company-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.company-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    color: #475569;
+    font-size: 14px;
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+.company-section {
+    margin-top: 40px;
+}
+
+.company-section h2 {
+    font-size: 24px;
+    color: #0f172a;
+    margin-bottom: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.company-section p {
+    color: #64748b;
+    line-height: 1.8;
+}
+
+/* ===========================
+   WEBSITE
+=========================== */
+
+.company-website {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #2563eb;
+    color: white;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.company-website:hover {
+    background: #1d4ed8;
+}
+
+/* ===========================
+   JOBS GRID
+=========================== */
+
+.company-jobs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+}
+
+.company-job-card {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+
+    padding: 20px;
+
+    transition: .3s;
+
+    text-decoration: none;
+}
+
+.company-job-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #2563eb;
+
+    box-shadow: 0 12px 28px rgba(37, 99, 235, .12);
+}
+
+.company-job-card h3 {
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.company-job-card p {
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+.company-job-card span {
+    display: inline-block;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ===========================
+   NOT FOUND
+=========================== */
+
+.company-not-found {
+    min-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.company-not-found h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.back-btn {
+    background: #2563eb;
+    color: white;
+
+    padding: 14px 28px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.back-btn:hover {
+    background: #1d4ed8;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 992px) {
+
+    .company-details-page {
+        padding: 40px 5%;
+    }
+
+    .company-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .company-meta {
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .company-details-card {
+        padding: 25px;
+    }
+
+    .company-header h1 {
+        font-size: 30px;
+    }
+
+    .company-logo,
+    .company-avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .company-avatar {
+        font-size: 32px;
+    }
+
+    .company-meta {
+        flex-direction: column;
+    }
+
+    .company-meta span {
+        justify-content: center;
+    }
+
+    .company-jobs {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -4,7 +4,7 @@
 
 .top-companies-wrapper {
     padding: 50px 3.8%;
-    background: #c8e2fd;
+    background: #ffff;
 }
 
 .top-companies-heading {
@@ -126,24 +126,25 @@
 ========================= */
 
 .top-company-action {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    margin-top: 20px;
-
-    padding: 12px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: #00a5ec;
+    background:#2563eb;
+    padding: 12px 20px;
     color: white;
+    border-radius: 10px;
+    margin-top: auto;
+}
 
-    cursor: pointer;
-
-    transition: 0.3s;
+.top-company-item {
+    display: flex;
+    flex-direction: column;
 }
 
 .top-company-action:hover {
-    background: #008bd1;
+    background: #0057d1;
+   
 }
 
 /* =========================

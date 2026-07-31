@@ -1,39 +1,116 @@
 import "./Hero.css";
+import {
+  FaSearch,
+  FaArrowRight,
+  FaBriefcase,
+  FaGraduationCap,
+} from "react-icons/fa";
 
 function Hero() {
   return (
-    <section className="heroPro-section">
-      <div className="heroPro-content">
-        <h1 className="heroPro-title">Build Your Career With SkillBridge</h1>
+    <section className="hero">
+      <div className="hero-container">
+        {/* Left Side */}
+        <div className="hero-left">
+          <span className="hero-tag">🚀 India's Smart Career Platform</span>
 
-        <p className="heroPro-description">
-          Find jobs, learn skills and connect with top companies.
-        </p>
+          <h1>
+            Find Your <span>Dream Job</span>
+            <br />
+            Learn New Skills &
+            <br />
+            Grow Your Career
+          </h1>
 
-        <div className="heroPro-buttons">
-          <button className="heroPro-google">🔵 Continue with Google</button>
+          <p>
+            Discover thousands of jobs, industry-leading courses and connect
+            with top companies across India.
+          </p>
 
-          <button className="heroPro-email">✉ Register with Email</button>
+          {/* Search */}
+          <div className="hero-search">
+            <FaSearch className="hero-search-icon" />
+
+            <input
+              type="text"
+              placeholder="Search jobs, companies, courses..."
+            />
+
+            <button>Search</button>
+          </div>
+
+          {/* Buttons */}
+
+          <div className="hero-buttons">
+            <button className="primary-btn">
+              Explore Jobs
+              <FaArrowRight />
+            </button>
+
+            <button className="secondary-btn">Browse Courses</button>
+          </div>
+
+          {/* Stats */}
+
+          <div className="hero-stats">
+            <div className="stat-box">
+              <h2>10K+</h2>
+              <p>Jobs</p>
+            </div>
+
+            <div className="stat-box">
+              <h2>500+</h2>
+              <p>Courses</p>
+            </div>
+
+            <div className="stat-box">
+              <h2>300+</h2>
+              <p>Companies</p>
+            </div>
+          </div>
         </div>
 
-        <div className="heroPro-stats">
-          <div className="heroPro-stat">
-            <h3>1000+</h3>
+        {/* Right Side */}
 
-            <p>Jobs</p>
+        <div className="hero-right">
+          <div className="hero-card">
+            <div className="card-icon">
+              <FaBriefcase />
+            </div>
+
+            <h3>Frontend Developer</h3>
+
+            <p>Google • Bengaluru</p>
+
+            <span>₹12 LPA</span>
           </div>
 
-          <div className="heroPro-stat">
-            <h3>500+</h3>
+          <div className="hero-card">
+            <div className="card-icon course">
+              <FaGraduationCap />
+            </div>
 
-            <p>Courses</p>
+            <h3>React.js Masterclass</h3>
+
+            <p>120+ Lessons</p>
+
+            <span>⭐⭐⭐⭐⭐</span>
           </div>
+        </div>
+      </div>
 
-          <div className="heroPro-stat">
-            <h3>100+</h3>
+      {/* Companies */}
 
-            <p>Companies</p>
-          </div>
+      <div className="companies">
+        <p>Trusted by students preparing for careers at</p>
+
+        <div className="company-list">
+          <span>Google</span>
+          <span>Microsoft</span>
+          <span>Amazon</span>
+          <span>TCS</span>
+          <span>Infosys</span>
+          <span>Accenture</span>
         </div>
       </div>
     </section>

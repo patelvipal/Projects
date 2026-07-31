@@ -1,0 +1,120 @@
+/* ==========================
+   GOOGLE FONT
+========================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: .3s;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================
+   GLOBAL SECTION
+========================== */
+
+section {
+    padding: 90px 6%;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* ==========================
+   COMMON BUTTONS
+========================== */
+
+.primary-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+.secondary-btn {
+    background: white;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.secondary-btn:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* ==========================
+   COMMON CARD EFFECT
+========================== */
+
+.card-hover {
+    transition: .35s;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(37, 99, 235, .15);
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e2e8f0;
+}

@@ -1,0 +1,244 @@
+/* ===========================
+   ENROLLED COURSES PAGE
+=========================== */
+
+.enrolled-page {
+    min-height: 100vh;
+    background: #f8fafc;
+    padding: 50px 6%;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.enrolled-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.enrolled-header h1 {
+    font-size: 38px;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.enrolled-header p {
+    color: #64748b;
+    font-size: 17px;
+}
+
+.enrolled-count {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 25px;
+    background: #2563eb;
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.enrolled-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.enrolled-card {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    transition: .3s;
+}
+
+.enrolled-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, .15);
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.course-image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.enrolled-card h2 {
+    padding: 18px 20px 10px;
+    font-size: 22px;
+    color: #0f172a;
+}
+
+.enrolled-card p {
+    padding: 0 20px;
+    margin-bottom: 10px;
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.enrolled-card strong {
+    color: #0f172a;
+}
+
+/* ===========================
+   STATUS
+=========================== */
+
+.status {
+    margin: 18px 20px;
+    padding: 10px 16px;
+    background: #dcfce7;
+    color: #15803d;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.status span {
+    color: #15803d;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.course-actions {
+    display: flex;
+    gap: 12px;
+    padding: 20px;
+}
+
+.details-btn,
+.remove-btn {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.details-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.details-btn:hover {
+    background: #1d4ed8;
+}
+
+.remove-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.remove-btn:hover {
+    background: #dc2626;
+}
+
+/* ===========================
+   EMPTY STATE
+=========================== */
+
+.empty-state {
+    max-width: 600px;
+    margin: 80px auto;
+    text-align: center;
+    background: white;
+    padding: 60px 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+}
+
+.empty-state h2 {
+    color: #0f172a;
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.empty-state p {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.browse-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #2563eb;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.browse-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 1200px) {
+    .enrolled-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .enrolled-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .enrolled-header h1 {
+        font-size: 32px;
+    }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 600px) {
+    .enrolled-page {
+        padding: 35px 20px;
+    }
+
+    .enrolled-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-actions {
+        flex-direction: column;
+    }
+
+    .enrolled-header h1 {
+        font-size: 28px;
+    }
+
+    .empty-state {
+        padding: 40px 20px;
+    }
+}

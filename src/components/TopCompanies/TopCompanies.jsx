@@ -1,4 +1,5 @@
 import "./TopCompanies.css";
+import { Link } from "react-router-dom";
 import companyData from "../../data/companyData";
 
 function TopCompanies() {
@@ -29,7 +30,9 @@ function TopCompanies() {
 
             <p className="top-company-rating">⭐ {company.rating}</p>
 
-            <button className="top-company-action">View Jobs</button>
+            <Link to="/companies" className="top-company-action">
+              View Company
+            </Link>
           </div>
         ))}
       </div>

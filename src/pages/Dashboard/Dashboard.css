@@ -1,0 +1,243 @@
+/* ===========================
+   DASHBOARD
+=========================== */
+
+.dashboard {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 5%;
+
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.dashboard-sidebar {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+
+    height: fit-content;
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.dashboard-user {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.dashboard-avatar {
+    width: 90px;
+    height: 90px;
+
+    margin: auto;
+    margin-bottom: 15px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.dashboard-user h3 {
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.dashboard-user p {
+    color: #64748b;
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+.dashboard-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dashboard-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    color: #475569;
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.dashboard-menu a:hover {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+/* ===========================
+   MAIN
+=========================== */
+
+.dashboard-main {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px;
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.dashboard-main h1 {
+    font-size: 34px;
+    color: #0f172a;
+}
+
+.dashboard-main p {
+    color: #64748b;
+    margin-top: 8px;
+}
+
+/* ===========================
+   STATS
+=========================== */
+
+.dashboard-cards {
+    margin-top: 35px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.dashboard-card {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+
+    color: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-6px);
+}
+
+.dashboard-card h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    color: rgba(255, 255, 255, .9);
+}
+
+/* ===========================
+   RECENT ACTIVITY
+=========================== */
+
+.dashboard-section {
+    margin-top: 45px;
+}
+
+.dashboard-section h2 {
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.activity-list {
+    list-style: none;
+}
+
+.activity-list li {
+    background: #f8fafc;
+
+    border-left: 4px solid #2563eb;
+
+    padding: 16px 18px;
+
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+
+    color: #475569;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 1100px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-sidebar {
+        order: 2;
+    }
+
+    .dashboard-main {
+        order: 1;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .dashboard {
+        padding: 0 20px;
+    }
+
+    .dashboard-main,
+    .dashboard-sidebar {
+        padding: 25px;
+    }
+
+    .dashboard-main h1 {
+        font-size: 28px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-avatar {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+    }
+
+    .dashboard-menu a {
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,322 @@
+/* ==========================
+   FEATURED JOBS
+========================== */
+
+.featured-jobs {
+    padding: 90px 8%;
+    background: #f8fafc;
+}
+
+.featured-container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* ==========================
+   SECTION HEADER
+========================== */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 42px;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: #64748b;
+    font-size: 18px;
+}
+
+/* ==========================
+   JOB GRID
+========================== */
+
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 30px;
+}
+
+/* ==========================
+   JOB CARD
+========================== */
+
+.job-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    transition: .35s;
+    position: relative;
+    overflow: hidden;
+}
+
+.job-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(37, 99, 235, .18);
+}
+
+/* ==========================
+   TOP
+========================== */
+
+.job-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.job-top h3 {
+    font-size: 24px;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.company-name {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* ==========================
+   SAVE BUTTON
+========================== */
+
+.save-btn {
+    width: 46px;
+    height: 46px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: .3s;
+}
+
+.save-btn:hover {
+
+    background: #2563eb;
+    color: white;
+
+}
+
+/* ==========================
+   DETAILS
+========================== */
+
+.job-details {
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+.job-details p {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #475569;
+    font-size: 15px;
+
+}
+
+.job-details svg {
+
+    color: #2563eb;
+
+}
+
+/* ==========================
+   TAGS
+========================== */
+
+.job-tags {
+
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    margin-bottom: 30px;
+
+}
+
+.job-tags span {
+
+    padding: 8px 16px;
+
+    background: #dbeafe;
+
+    color: #2563eb;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.job-footer {
+
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+}
+
+.details-btn {
+
+    flex: 1;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    padding: 13px;
+
+    border: 2px solid #2563eb;
+
+    color: #2563eb;
+
+    border-radius: 12px;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+.details-btn:hover {
+
+    background: #2563eb;
+    color: white;
+
+}
+
+.apply-btn {
+
+    flex: 1;
+
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+.apply-btn:hover {
+
+    background: #1d4ed8;
+
+}
+
+/* ==========================
+   VIEW ALL
+========================== */
+
+.view-all {
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 55px;
+
+}
+
+.view-btn {
+
+    text-decoration: none;
+
+    background: #2563eb;
+    color: white;
+
+    padding: 15px 35px;
+
+    border-radius: 40px;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+.view-btn:hover {
+
+    background: #1d4ed8;
+    transform: translateY(-3px);
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:992px) {
+
+    .section-header h2 {
+        font-size: 34px;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .featured-jobs {
+        padding: 70px 20px;
+    }
+
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .job-footer {
+        flex-direction: column;
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .job-card {
+        padding: 22px;
+    }
+
+    .job-top h3 {
+        font-size: 20px;
+    }
+
+    .section-header h2 {
+        font-size: 28px;
+    }
+
+}

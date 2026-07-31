@@ -1,203 +1,198 @@
-.ctaPro-section {
+/* ===========================
+   CAREER CTA SECTION
+=========================== */
 
+.career-cta {
+    padding: 90px 6%;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    position: relative;
+    overflow: hidden;
+}
 
-    margin: 60px 40px;
+/* Floating Background */
 
+.career-cta::before,
+.career-cta::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .08);
+}
 
-    padding: 70px 40px;
+.career-cta::before {
+    width: 320px;
+    height: 320px;
+    top: -120px;
+    left: -120px;
+}
 
+.career-cta::after {
+    width: 260px;
+    height: 260px;
+    bottom: -80px;
+    right: -80px;
+}
 
-    border-radius: 30px;
+/* ===========================
+   CONTAINER
+=========================== */
 
-
-
-    background:
-
-
-        linear-gradient(135deg,
-            #00a5ec,
-            #2563eb);
-
-
-
-    display: flex;
-
-
-    justify-content: center;
-
-
-    align-items: center;
-
-
+.career-cta-container {
+    max-width: 1200px;
+    margin: auto;
     text-align: center;
-
-
+    position: relative;
+    z-index: 2;
 }
 
+/* ===========================
+   BADGE
+=========================== */
 
-
-
-
-.ctaPro-content h2 {
-
-
-    font-size: 42px;
-
-
+.cta-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    background: rgba(255, 255, 255, .15);
     color: white;
-
-
-    margin-bottom: 15px;
-
-
-}
-
-
-
-
-
-.ctaPro-content p {
-
-
-    color: #e5e7eb;
-
-
-    font-size: 18px;
-
-
-}
-
-
-
-
-
-.ctaPro-buttons {
-
-
-    margin-top: 30px;
-
-
-    display: flex;
-
-
-    gap: 15px;
-
-
-    justify-content: center;
-
-
-}
-
-
-
-
-
-.ctaPro-primary,
-.ctaPro-secondary {
-
-
-    padding: 14px 30px;
-
-
-    border-radius: 12px;
-
-
-    border: none;
-
-
-    cursor: pointer;
-
-
+    border-radius: 50px;
+    font-size: 14px;
     font-weight: 600;
-
-
+    margin-bottom: 20px;
+    backdrop-filter: blur(8px);
 }
 
+/* ===========================
+   TITLE
+=========================== */
 
-
-
-
-.ctaPro-primary {
-
-
-    background: white;
-
-
-    color: #2563eb;
-
-
-}
-
-
-
-
-
-.ctaPro-secondary {
-
-
-    background: #111827;
-
-
+.career-cta h2 {
+    font-size: 44px;
     color: white;
+    margin-bottom: 18px;
+    line-height: 1.3;
+}
 
+.career-cta p {
+    max-width: 720px;
+    margin: auto;
+    color: rgba(255, 255, 255, .9);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* ===========================
+   STATS
+=========================== */
+
+.cta-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin: 60px 0;
+}
+
+.cta-stat {
+    background: rgba(255, 255, 255, .12);
+    padding: 28px;
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    transition: .35s;
+}
+
+.cta-stat:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, .2);
+}
+
+.cta-stat h3 {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.cta-stat span {
+    color: rgba(255, 255, 255, .9);
+    font-size: 15px;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-primary-btn,
+.cta-secondary-btn {
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.cta-primary-btn {
+    background: white;
+    color: #2563eb;
+}
+
+.cta-primary-btn:hover {
+    transform: translateY(-4px);
+    background: #f8fafc;
+}
+
+.cta-secondary-btn {
+    border: 2px solid white;
+    color: white;
+}
+
+.cta-secondary-btn:hover {
+    background: white;
+    color: #2563eb;
+    transform: translateY(-4px);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 992px) {
+
+    .cta-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
 }
 
+@media (max-width: 768px) {
 
-
-
-
-
-.ctaPro-primary:hover,
-.ctaPro-secondary:hover {
-
-
-    transform: translateY(-3px);
-
-
-}
-
-
-
-
-
-@media(max-width:600px) {
-
-
-    .ctaPro-section {
-
-
-        margin: 40px 15px;
-
-
-        padding: 50px 20px;
-
-
+    .career-cta {
+        padding: 70px 5%;
     }
 
-
-
-
-
-    .ctaPro-content h2 {
-
-
-        font-size: 28px;
-
-
+    .career-cta h2 {
+        font-size: 32px;
     }
 
+    .career-cta p {
+        font-size: 16px;
+    }
 
-
-
-    .ctaPro-buttons {
-
-
+    .cta-buttons {
         flex-direction: column;
-
-
     }
 
+    .cta-primary-btn,
+    .cta-secondary-btn {
+        width: 100%;
+        text-align: center;
+    }
 
+    .cta-stats {
+        grid-template-columns: 1fr;
+    }
 
 }

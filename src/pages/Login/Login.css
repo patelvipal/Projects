@@ -1,0 +1,260 @@
+/* ===========================
+   LOGIN PAGE
+=========================== */
+
+.login-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eff6ff, #f8fafc);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 6%;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.login-container {
+    width: 100%;
+    max-width: 1200px;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+}
+
+/* ===========================
+   LEFT SIDE
+=========================== */
+
+.login-left {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+
+    color: white;
+
+    padding: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-left h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.login-left p {
+    font-size: 18px;
+    line-height: 1.8;
+    opacity: .95;
+    margin-bottom: 40px;
+}
+
+.login-left img {
+    width: 100%;
+    border-radius: 18px;
+
+    object-fit: cover;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .2);
+}
+
+/* ===========================
+   RIGHT SIDE
+=========================== */
+
+.login-right {
+    padding: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-right h2 {
+    font-size: 34px;
+    color: #0f172a;
+    margin-bottom: 35px;
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+.input-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.input-icon {
+    position: absolute;
+
+    left: 18px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #64748b;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 16px 16px 16px 50px;
+
+    border: 1px solid #dbe4f0;
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: .3s;
+}
+
+.input-group input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, .10);
+}
+
+/* ===========================
+   OPTIONS
+=========================== */
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    font-size: 14px;
+}
+
+.login-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #475569;
+}
+
+.login-options a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-options a:hover {
+    text-decoration: underline;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.login-btn {
+    width: 100%;
+
+    border: none;
+
+    padding: 16px;
+
+    background: #2563eb;
+    color: white;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.login-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   REGISTER
+=========================== */
+
+.register-text {
+    margin-top: 30px;
+
+    text-align: center;
+
+    color: #64748b;
+}
+
+.register-text a {
+    margin-left: 6px;
+
+    color: #2563eb;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 992px) {
+
+    .login-container {
+        grid-template-columns: 1fr;
+    }
+
+    .login-left {
+        display: none;
+    }
+
+    .login-right {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .login-page {
+        padding: 20px;
+    }
+
+    .login-right {
+        padding: 30px 20px;
+    }
+
+    .login-right h2 {
+        font-size: 28px;
+    }
+
+    .login-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .input-group input {
+        font-size: 14px;
+    }
+
+}

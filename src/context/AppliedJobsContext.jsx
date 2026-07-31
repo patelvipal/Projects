@@ -1,22 +1,31 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const AppliedJobsContext = createContext();
 
 export const AppliedJobsProvider = ({ children }) => {
-  const [appliedJobs, setAppliedJobs] = useState([]);
+  // Load Applied Jobs from Local Storage
+  const [appliedJobs, setAppliedJobs] = useState(() => {
+    const storedJobs = localStorage.getItem("appliedJobs");
+    return storedJobs ? JSON.parse(storedJobs) : [];
+  });
+
+  // Save Applied Jobs to Local Storage
+  useEffect(() => {
+    localStorage.setItem("appliedJobs", JSON.stringify(appliedJobs));
+  }, [appliedJobs]);
 
   // Apply Job
   const applyJob = (job) => {
-    const alreadyApplied = appliedJobs.find((item) => item.id === job.id);
+    const alreadyApplied = appliedJobs.some((item) => item.id === job.id);
 
     if (!alreadyApplied) {
-      setAppliedJobs([...appliedJobs, job]);
+      setAppliedJobs((prev) => [...prev, job]);
     }
   };
 
   // Remove Applied Job
   const removeAppliedJob = (id) => {
-    setAppliedJobs(appliedJobs.filter((job) => job.id !== id));
+    setAppliedJobs((prev) => prev.filter((job) => job.id !== id));
   };
 
   // Check Applied

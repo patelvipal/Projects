@@ -6,16 +6,16 @@ function ProfileCompletion() {
   const { profile } = useProfile();
 
   const fields = [
-    profile.profileImage,
-    profile.fullName,
-    profile.email,
-    profile.phone,
-    profile.location,
-    profile.about,
-    profile.education,
-    profile.github,
-    profile.linkedin,
-    profile.resume,
+    !!profile.profileImage,
+    !!profile.fullName,
+    !!profile.email,
+    !!profile.phone,
+    !!profile.location,
+    !!profile.about,
+    !!profile.education,
+    !!profile.github,
+    !!profile.linkedin,
+    profile.resume?.name !== "",
     profile.skills?.length > 0,
   ];
 

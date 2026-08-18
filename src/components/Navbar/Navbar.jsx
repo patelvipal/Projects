@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { useSearch } from "../../context/SearchContext";
 
 import {
   FaBars,
@@ -24,6 +25,7 @@ function Navbar() {
   const { savedJobs } = useSavedJobs();
   const { savedCourses } = useSavedCourses();
 
+  const { searchTerm, setSearchTerm } = useSearch();
   return (
     <header className="navbar">
       <div className="nav-container">
@@ -39,7 +41,15 @@ function Navbar() {
         <div className="nav-search">
           <FaSearch className="search-icon" />
 
-          <input type="text" placeholder="Search jobs, courses..." />
+          <input
+            type="text"
+            placeholder="Search jobs, courses, companies..."
+            value={searchTerm}
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+              console.log("Navbar:", e.target.value);
+            }}
+          />
         </div>
 
         {/* Mobile Button */}

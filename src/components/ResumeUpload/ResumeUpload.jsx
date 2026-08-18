@@ -1,11 +1,6 @@
-import { useRef, useState } from "react";
-import {
-  FaFilePdf,
-  FaUpload,
-  FaEye,
-  FaTrash,
-  FaCheckCircle,
-} from "react-icons/fa";
+import { useRef } from "react";
+import { toast } from "react-toastify";
+import { FaFilePdf, FaUpload, FaEye, FaTrash } from "react-icons/fa";
 
 import { useProfile } from "../../context/ProfileContext";
 
@@ -16,19 +11,19 @@ function ResumeUpload() {
 
   const fileInputRef = useRef(null);
 
-  const [showSuccess, setShowSuccess] = useState(false);
-
+  // Open File Picker
   const handleUploadClick = () => {
     fileInputRef.current.click();
   };
 
+  // Upload Resume
   const handleFileChange = (e) => {
     const file = e.target.files[0];
 
     if (!file) return;
 
     if (file.type !== "application/pdf") {
-      alert("Please upload a PDF file.");
+      toast.error("❌ Please upload only a PDF file.");
       return;
     }
 
@@ -40,48 +35,64 @@ function ResumeUpload() {
         data: reader.result,
       });
 
-      setShowSuccess(true);
-
-      setTimeout(() => {
-        setShowSuccess(false);
-      }, 2500);
+      toast.success("📄 Resume Uploaded Successfully!");
     };
 
     reader.readAsDataURL(file);
   };
 
+  // View Resume
   const handleViewResume = () => {
-    if (!profile.resume.data) return;
+    if (!profile.resume?.data) {
+      toast.warning("⚠️ No Resume Available.");
+      return;
+    }
 
     const newWindow = window.open();
 
+    if (!newWindow) {
+      toast.error("❌ Pop-up blocked. Please allow pop-ups.");
+      return;
+    }
+
     newWindow.document.write(`
-      <iframe
-        src="${profile.resume.data}"
-        frameborder="0"
-        style="width:100%;height:100vh"
-      ></iframe>
+      <html>
+        <head>
+          <title>${profile.resume.name}</title>
+        </head>
+        <body style="margin:0;">
+          <iframe
+            src="${profile.resume.data}"
+            frameborder="0"
+            style="width:100%;height:100vh;"
+          ></iframe>
+        </body>
+      </html>
     `);
+
+    newWindow.document.close();
   };
 
+  // Delete Resume
   const handleDeleteResume = () => {
     removeResume();
 
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
+
+    toast.info("🗑️ Resume Deleted Successfully!");
   };
 
   return (
     <div className="resume-upload-card">
       <h2 className="resume-title">
-        <FaFilePdf />
-        Resume
+        <FaFilePdf /> Resume
       </h2>
 
       <div className="resume-content">
         <p className="resume-name">
-          {profile.resume.name || "No Resume Uploaded"}
+          {profile.resume?.name || "No Resume Uploaded"}
         </p>
 
         <input
@@ -95,14 +106,13 @@ function ResumeUpload() {
         <div className="resume-buttons">
           <button className="upload-btn" onClick={handleUploadClick}>
             <FaUpload />
-
-            {profile.resume.name ? "Replace Resume" : "Upload Resume"}
+            {profile.resume?.name ? "Replace Resume" : "Upload Resume"}
           </button>
 
           <button
             className="view-btn"
             onClick={handleViewResume}
-            disabled={!profile.resume.data}
+            disabled={!profile.resume?.data}
           >
             <FaEye />
             View Resume
@@ -111,20 +121,13 @@ function ResumeUpload() {
           <button
             className="delete-btn"
             onClick={handleDeleteResume}
-            disabled={!profile.resume.name}
+            disabled={!profile.resume?.name}
           >
             <FaTrash />
             Delete
           </button>
         </div>
       </div>
-
-      {showSuccess && (
-        <div className="resume-success">
-          <FaCheckCircle />
-          Resume Uploaded Successfully!
-        </div>
-      )}
     </div>
   );
 }

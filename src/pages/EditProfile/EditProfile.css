@@ -103,6 +103,7 @@
 .save-btn {
     background: #2563eb;
     color: white;
+    width: auto;
 }
 
 .save-btn:hover {

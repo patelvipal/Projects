@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSearch } from "../../context/SearchContext";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -17,7 +18,8 @@ function Jobs() {
   // STATES
   // ==========================
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const { searchTerm } = useSearch();
+  console.log("Jobs Search:", searchTerm);
 
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -36,7 +38,16 @@ function Jobs() {
   const filteredJobs = jobsData.filter((job) => {
     const matchesSearch =
       job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      job.company.toLowerCase().includes(searchTerm.toLowerCase());
+      job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.jobType.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.experience.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.salary.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.skills?.some((skill) =>
+        skill.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
 
     const matchesCategory =
       selectedCategory === "All" || job.category === selectedCategory;
@@ -81,8 +92,6 @@ function Jobs() {
       <Navbar />
 
       <div className="jobs-page">
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-
         <div className="jobs-layout">
           <FilterSidebar
             selectedCategory={selectedCategory}

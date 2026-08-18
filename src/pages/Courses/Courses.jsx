@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearch } from "../../context/SearchContext";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import CourseCard from "../../components/CourseCard/CourseCard";
@@ -7,13 +8,16 @@ import coursesData from "../../data/coursesData";
 import "./Courses.css";
 
 function Courses() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const { searchTerm } = useSearch();
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredCourses = coursesData.filter((course) => {
     const matchesSearch =
       course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      course.instructor.toLowerCase().includes(searchTerm.toLowerCase());
+      course.instructor.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      course.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (course.description &&
+        course.description.toLowerCase().includes(searchTerm.toLowerCase()));
 
     const matchesCategory =
       selectedCategory === "All" || course.category === selectedCategory;
@@ -34,14 +38,7 @@ function Courses() {
 
         {/* Search */}
 
-        <div className="courses-search">
-          <input
-            type="text"
-            placeholder="Search courses..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
+        <div className="courses-search"></div>
 
         <div className="courses-container">
           {/* Sidebar */}

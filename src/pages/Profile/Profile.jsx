@@ -129,12 +129,6 @@ function Profile() {
             <h2>
               <ResumeUpload />
             </h2>
-
-            <div className="resume-box">
-              <p>{profile.resume ? profile.resume : "No Resume Uploaded"}</p>
-
-              <div className="resume-buttons"></div>
-            </div>
           </div>
 
           {/* Social Links */}

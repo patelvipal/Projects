@@ -1,3 +1,4 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
 const Job = require("./models/Job");
@@ -7,10 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 2000;
+const PORT = process.env.PORT || 2000;
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/skillbridge")
+  .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB connected successfully");
   })

@@ -1,6 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-
-import Home from "./pages/Home/home.jsx";
+import Home from "./pages/home/home.jsx";
 import Jobs from "./pages/Jobs/Jobs";
 import JobDetails from "./pages/JobDetails/JobDetails";
 import SavedJobs from "./pages/SavedJobs/SavedJobs";

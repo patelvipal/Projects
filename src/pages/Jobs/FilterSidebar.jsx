@@ -10,16 +10,18 @@ function FilterSidebar({
 }) {
   const categories = [
     "All",
-    "Frontend",
-    "Backend",
+    "Frontend Development",
+    "Backend Development",
     "MERN Stack",
-    "UI/UX",
+    "UI/UX Design",
     "Data Science",
     "Cyber Security",
   ];
 
   const locations = [
     "All",
+    "Surat",
+    "Ahmedabad",
     "Mumbai",
     "Pune",
     "Bangalore",
@@ -30,9 +32,9 @@ function FilterSidebar({
 
   const jobTypes = [
     "All",
-    "Full Time",
+    "Full-time",
     "Internship",
-    "Part Time",
+    "Part-time",
     "Remote",
     "Hybrid",
   ];

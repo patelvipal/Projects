@@ -1,16 +1,26 @@
+require("dotenv").config();
+
+const dns = require("dns");
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
+
 const mongoose = require("mongoose");
 const express = require("express");
-const Job = require("./models/Job");
 const cors = require("cors");
 
+const Job = require("./models/Job");
+const adminRoutes = require("./routes/adminRoutes");
+const authMiddleware = require("./middleware/authMiddleware");
+
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
-const PORT = 2000;
+const PORT = process.env.PORT || 2000;
 
+// MongoDB Connection
 mongoose
-  .connect("mongodb://127.0.0.1:27017/skillbridge")
+  .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB connected successfully");
   })
@@ -18,13 +28,27 @@ mongoose
     console.log("MongoDB connection failed:", error);
   });
 
+// Home Route
 app.get("/", (req, res) => {
   res.send("SkillBridge Backend is running!");
 });
 
-// GET all jobs
+// Admin Login Route
+app.use("/api/admin", adminRoutes);
 
-// GET single job by ID
+// GET All Jobs (Public)
+app.get("/api/jobs", async (req, res) => {
+  try {
+    const jobs = await Job.find();
+    res.json(jobs);
+  } catch (error) {
+    res.status(500).json({
+      message: "Failed to fetch jobs",
+    });
+  }
+});
+
+// GET Single Job (Public)
 app.get("/api/jobs/:id", async (req, res) => {
   try {
     const job = await Job.findById(req.params.id);
@@ -42,23 +66,11 @@ app.get("/api/jobs/:id", async (req, res) => {
     });
   }
 });
-app.get("/api/jobs", async (req, res) => {
-  try {
-    const jobs = await Job.find();
 
-    res.json(jobs);
-  } catch (error) {
-    res.status(500).json({
-      message: "Failed to fetch jobs",
-    });
-  }
-});
-
-// POST create job
-app.post("/api/jobs", async (req, res) => {
+// POST Create Job (Admin Only)
+app.post("/api/jobs", authMiddleware, async (req, res) => {
   try {
     const newJob = new Job(req.body);
-
     const savedJob = await newJob.save();
 
     res.status(201).json({
@@ -73,8 +85,8 @@ app.post("/api/jobs", async (req, res) => {
   }
 });
 
-// PUT update job
-app.put("/api/jobs/:id", async (req, res) => {
+// PUT Update Job (Admin Only)
+app.put("/api/jobs/:id", authMiddleware, async (req, res) => {
   try {
     const jobId = req.params.id;
 
@@ -107,10 +119,16 @@ app.put("/api/jobs/:id", async (req, res) => {
   }
 });
 
-// DELETE job
-app.delete("/api/jobs/:id", async (req, res) => {
+// DELETE Job (Admin Only)
+app.delete("/api/jobs/:id", authMiddleware, async (req, res) => {
   try {
     const jobId = req.params.id;
+
+    if (!mongoose.Types.ObjectId.isValid(jobId)) {
+      return res.status(400).json({
+        message: "Invalid job ID",
+      });
+    }
 
     const deletedJob = await Job.findByIdAndDelete(jobId);
 
@@ -127,10 +145,11 @@ app.delete("/api/jobs/:id", async (req, res) => {
   } catch (error) {
     res.status(500).json({
       message: "Failed to delete job",
-      error: error.message,
     });
   }
 });
+
+// Start Server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

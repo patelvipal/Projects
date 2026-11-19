@@ -10,6 +10,7 @@ import FilterSidebar from "./FilterSidebar";
 import Pagination from "./Pagination";
 
 import "./Jobs.css";
+
 const API_URL = "https://skillbridge-backend-e156.onrender.com/api/jobs";
 
 function Jobs() {
